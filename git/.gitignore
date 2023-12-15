@@ -1,0 +1,28 @@
+# Node
+npm-debug.log
+node_modules/*
+
+# Mac
+.DS_Store
+
+# Editor configs
+.fleet/*
+.idea/*
+.vscode/*
+
+# General
+log/*
+*log.
+
+# Prettier Ignore
+.prettierignore
+
+# RVM
+.ruby-gemset
+
+# NVM
+.nvmrc
+
+# XCode
+/ios/*
+/android/*

@@ -1,0 +1,23 @@
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = Bryson Rafael
+	email = bryson.rafael@planningcenter.com
+[core]
+	excludesfile = /Users/brysonrafael/.gitignore
+	editor = nvim
+[push]
+	autoSetupRemote = true
+[alias]
+	sla = log --oneline --decorate --graph --all
+	slp = log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'
+	glog = log -E -i --grep
+	car = commit --amend --no-edit
+	unstage = reset
+	uncommit = reset --soft HEAD^
+[color]
+	ui = true
+	diff = always
