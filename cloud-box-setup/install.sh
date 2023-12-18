@@ -11,8 +11,8 @@ if ! command which stow &> /dev/null; then
   sudo apt-get install -y stow
 
   # Remove exising dotfiles
-  rm ~/.gitignore
-  rm ~/.zshrc
+  rm -rf ~/.gitignore
+  rm -rf ~/.zshrc
   
   # Symlink config files to home directory
   cd ~/.dotfiles
