@@ -23,6 +23,7 @@ if ! command which zsh &> /dev/null; then
 fi
 
 # Remove exising dotfiles
+rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.zshrc
 
@@ -32,5 +33,11 @@ stow git
 stow nvim
 stow zsh
 
+# install neovim plugins
+nvim --headless +PlugInstall +qall
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
+exec zsh
+
+
