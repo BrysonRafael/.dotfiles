@@ -13,11 +13,13 @@ fi
 
 # If zsh is not installed
 if ! command which zsh &> /dev/null; then
-  # Install zsh
   sudo apt install zsh
 
-  # Install oh-my-zsh
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # add zsh as a login shell
+  command -v zsh | sudo tee -a /etc/shells
+
+  # use zsh as default shell
+  sudo chsh -s $(which zsh) $USER
 fi
 
 # Remove exising dotfiles
@@ -30,5 +32,6 @@ stow git
 stow nvim
 stow zsh
 
-# Switch to zsh
-chsh -s $(which zsh) $USER
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
