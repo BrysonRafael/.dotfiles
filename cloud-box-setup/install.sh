@@ -22,16 +22,11 @@ if ! command which zsh &> /dev/null; then
   sudo chsh -s $(which zsh) $USER
 fi
 
-# Remove exising dotfiles
-rm -rf ~/.gitconfig
-rm -rf ~/.gitignore
-rm -rf ~/.zshrc
-
 # Symlink config files to home directory
 cd ~/.dotfiles
-stow git
-stow nvim
-stow zsh
+stow -R git
+stow -R nvim
+stow -R zsh
 cd ~
 
 # install neovim plugins
