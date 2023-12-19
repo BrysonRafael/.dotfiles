@@ -23,9 +23,9 @@ if ! command which zsh &> /dev/null; then
 fi
 
 # Remove existing files
-rm -rf ~/.gitconfig
-rm -rf ~/.gitignore
-rm -rf ~/.zshrc
+rm ~/.gitconfig
+rm ~/.gitignore
+rm ~/.zshrc
 
 # Symlink config files to home directory
 cd ~/.dotfiles
