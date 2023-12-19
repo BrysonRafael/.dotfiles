@@ -32,6 +32,7 @@ cd ~/.dotfiles
 stow git
 stow nvim
 stow zsh
+cd ~
 
 # install neovim plugins
 nvim --headless "+Lazy! sync" +qall
