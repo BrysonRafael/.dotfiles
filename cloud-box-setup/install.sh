@@ -24,9 +24,9 @@ fi
 
 # Symlink config files to home directory
 cd ~/.dotfiles
-stow -R git
-stow -R nvim
-stow -R zsh
+stow --no-folding git
+stow --no-folding nvim
+stow ---no-folding zsh
 cd ~
 
 # install neovim plugins
