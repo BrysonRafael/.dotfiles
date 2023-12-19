@@ -34,7 +34,7 @@ stow nvim
 stow zsh
 
 # install neovim plugins
-nvim --headless +PlugInstall +qall
+nvim --headless "+Lazy! sync" +qall
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
