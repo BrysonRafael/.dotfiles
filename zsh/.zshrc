@@ -147,7 +147,11 @@ if which nvm &> /dev/null; then
   load-nvmrc
 fi
 
+# Ruby
 if which rvm &> /dev/null; then
   # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
   export PATH="$PATH:$HOME/.rvm/bin"
+elif which rbenv &> /dev/null; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
 fi
