@@ -11,7 +11,7 @@ if ! command which stow &> /dev/null; then
   sudo apt-get install -y stow
 fi
 
-# If zsh is not installed
+# Install ZSH
 if ! command which zsh &> /dev/null; then
   sudo apt install zsh
 
