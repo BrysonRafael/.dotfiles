@@ -36,6 +36,9 @@ stow zsh
 # install neovim plugins
 nvim --headless "+Lazy! sync" +qall
 
+# install ripgrep for telescope
+sudo apt-get install ripgrep
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 exec zsh
