@@ -13,10 +13,10 @@ keymap("n", "<C-k>", "<C-w>k", { noremap = true })
 keymap("n", "<C-l>", "<C-w>l", { noremap = true })
 
 -- Resize windows with Shift + arrow keys
-keymap("n", "<A-Right>", ":vertical resize -2<CR>", { noremap = true, silent = true })
-keymap("n", "<A-Left>", ":vertical resize +2<CR>", { noremap = true, silent = true })
-keymap("n", "<A-Up>", ":resize -2<CR>", { noremap = true, silent = true })
-keymap("n", "<A-Down>", ":resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<M-Right>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<M-Left>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<M-Up>", ":resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<M-Down>", ":resize +2<CR>", { noremap = true, silent = true })
 
 
 -- Buffer Navigation --
