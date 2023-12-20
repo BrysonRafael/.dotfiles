@@ -99,6 +99,7 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias gcm="git checkout main"
 alias vim="nvim"
 alias vi="nvim"
+alias dot="cd ~/.dotfiles"
 
 
 # PLANNING CENTER CONFIG
