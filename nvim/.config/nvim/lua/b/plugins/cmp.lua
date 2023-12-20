@@ -16,6 +16,9 @@ return {
     -- Rails fixtures
     { "wassimk/cmp-rails-fixture-types", version = "*", ft = "ruby" },
     { "wassimk/cmp-rails-fixture-names", version = "*", ft = "ruby" },
+
+    -- Flipper gem
+    { "wassimk/cmp-feature-flipper", version = "*" },
   },
   config = function()
     local cmp = require "cmp"
@@ -67,6 +70,7 @@ return {
         { name = "path" },
         { name = "rails-fixture-names" },
         { name = "rails-fixture-types" },
+        { name = "feature-flipper" },
       },
     }
   end
