@@ -15,8 +15,6 @@ return {
         "html",
         "jsonls",
         "lua_ls",
-        "pylsp",
-        "tailwindcss",
         "tsserver",
         "vimls",
         "yamlls",
