@@ -6,6 +6,8 @@
   "bufferline.nvim": { "branch": "main", "commit": "6c456b888823d9e4832aa91c482bccd19445c009" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
+  "cmp-rails-fixture-names": { "branch": "main", "commit": "bb08ff72802d1a3aaf82be7003bda9ee1564af93" },
+  "cmp-rails-fixture-types": { "branch": "main", "commit": "85fe903e9796934e26f24441d2d4139a7343875b" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "fidget.nvim": { "branch": "main", "commit": "7638c0dd51be8078e10263d73eecfdd42262d69b" },
   "friendly-snippets": { "branch": "main", "commit": "53d3df271d031c405255e99410628c26a8f0d2b0" },

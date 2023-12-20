@@ -12,6 +12,10 @@ return {
 
     -- Adds a number of user-friendly snippets
     "rafamadriz/friendly-snippets",
+
+    -- Rails fixtures
+    { "wassimk/cmp-rails-fixture-types", version = "*", ft = "ruby" },
+    { "wassimk/cmp-rails-fixture-names", version = "*", ft = "ruby" },
   },
   config = function()
     local cmp = require "cmp"
@@ -61,6 +65,8 @@ return {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "path" },
+        { name = "rails-fixture-names" },
+        { name = "rails-fixture-types" },
       },
     }
   end
