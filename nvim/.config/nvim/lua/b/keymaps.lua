@@ -25,9 +25,11 @@ keymap("n", "<leader>bn", ":bnext<CR>", { noremap = true, silent = true, desc = 
 -- Move to the previous buffer
 keymap("n", "<leader>bp", ":bprev<CR>", { noremap = true, silent = true, desc = "[B]uffer Previous" })
 
--- Close the current buffer
+-- Delete the current buffer
 keymap("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true, desc = "[B]uffer Delete" })
 
+-- Delete all buffers
+keymap("n", "<leader>bda", ":%bd<CR>", { noremap = true, silent = true, desc = "[B]uffer Delete All" })
 
 -- Tab Navigation --
 
