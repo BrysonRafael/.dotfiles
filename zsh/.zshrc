@@ -100,10 +100,13 @@ alias gcm="git checkout main"
 alias vim="nvim"
 alias vi="nvim"
 alias dot="cd ~/.dotfiles"
+alias ls="ls -a"
+alias cik="clone-in-kitty"
 
 
 # PLANNING CENTER CONFIG
 eval "$($HOME/Code/pco/bin/pco init -)"
+alias cloud-box="kitten ssh ubuntu@$(pco cloud-box ip)"
 
 
 # pyenv setup
