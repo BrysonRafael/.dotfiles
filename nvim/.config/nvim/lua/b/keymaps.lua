@@ -12,9 +12,11 @@ keymap("n", "<C-j>", "<C-w>j", { noremap = true })
 keymap("n", "<C-k>", "<C-w>k", { noremap = true })
 keymap("n", "<C-l>", "<C-w>l", { noremap = true })
 
--- Resize windows using Ctrl + (+, -)
-keymap("n", "<C-=>", "<C-w>+", { noremap = true })
-keymap("n", "<C-->", "<C-w>-", { noremap = true })
+-- Resize windows with Shift + arrow keys
+keymap("n", "<A-Right>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<A-Left>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<A-Up>", ":resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<A-Down>", ":resize +2<CR>", { noremap = true, silent = true })
 
 
 -- Buffer Navigation --
@@ -30,6 +32,7 @@ keymap("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true, desc = "[B
 
 -- Delete all buffers
 keymap("n", "<leader>bda", ":%bd<CR>", { noremap = true, silent = true, desc = "[B]uffer Delete All" })
+
 
 -- Tab Navigation --
 

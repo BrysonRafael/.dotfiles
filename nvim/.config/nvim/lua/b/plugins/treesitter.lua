@@ -4,6 +4,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "windwp/nvim-ts-autotag",
+    "RRethy/nvim-treesitter-endwise",
   },
   build = ":TSUpdate",
   config = function()
@@ -16,6 +17,7 @@ return {
       },
       indent = { enable = true },
       autotag = { enable = true },
+      endwise = { enable = true },
       ensure_installed = {
         "bash",
         "css",
