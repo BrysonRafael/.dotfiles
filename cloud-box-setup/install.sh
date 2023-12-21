@@ -32,7 +32,11 @@ cd ~/.dotfiles
 stow git
 stow nvim
 stow zsh
+stow tmux
 cd ~
+
+# Source tmux config
+tmux source-file ~/.config/tmux/tmux.conf
 
 # install neovim plugins
 nvim --headless "+Lazy! sync" +qall
