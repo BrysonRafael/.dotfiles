@@ -1,13 +1,15 @@
 return {
   "numToStr/Navigator.nvim",
   config = function ()
-    require("Navigator").setup()
+    local navigator = require("Navigator")
+    navigator.setup()
 
-    local set_keymap = vim.keymap.set
-    set_keymap({"n", "t"}, "<C-h>", "<CMD>NavigatorLeft<CR>")
-    set_keymap({"n", "t"}, "<C-l>", "<CMD>NavigatorRight<CR>")
-    set_keymap({"n", "t"}, "<C-k>", "<CMD>NavigatorUp<CR>")
-    set_keymap({"n", "t"}, "<C-j>", "<CMD>NavigatorDown<CR>")
-    set_keymap({"n", "t"}, "<C-p>", "<CMD>NavigatorPrevious<CR>")
+    local set_keymap = vim.api.nvim_set_keymap
+    local opts = { noremap = true, silent = true }
+    set_keymap("n", "<C-h>", "<CMD>NavigatorLeft<CR>", opts)
+    set_keymap("n", "<C-l>", "<CMD>NavigatorRight<CR>", opts)
+    set_keymap("n", "<C-k>", "<CMD>NavigatorUp<CR>", opts)
+    set_keymap("n", "<C-j>", "<CMD>NavigatorDown<CR>", opts)
+    set_keymap("n", "<C-p>", "<CMD>NavigatorPrevious<CR>", opts)
   end
 }
