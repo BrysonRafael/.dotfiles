@@ -10,9 +10,15 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = "Batman"
+config.color_scheme = "BlulocoDark"
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 12
-
+config.font_size = 14
+config.hide_tab_bar_if_only_one_tab = true
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = "0.5cell",
+  bottom = 0,
+}
 -- and finally, return the configuration to wezterm
 return config
