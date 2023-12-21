@@ -15,7 +15,6 @@ else
 fi
 
 # Aliases
-alias cik="clone-in-kitty"
 alias dot="cd ~/.dotfiles"
 alias dot_git="cd ~/.dotfiles/git/"
 alias dot_nvim="cd ~/.dotfiles/nvim/.config/nvim/"
