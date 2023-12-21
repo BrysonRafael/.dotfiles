@@ -49,6 +49,10 @@ if [ -f /etc/os-release ]; then
 fi
 
 
+# WezTerm
+PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+export PATH
+
 
 # pyenv setup
 if which pyenv &> /dev/null; then
