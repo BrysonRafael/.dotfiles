@@ -16,6 +16,8 @@ return {
       }
     })
 
-    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+    local set_keymap = vim.keymap.set
+    set_keymap("n", "<leader>et", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "[E]xplorer Toggle" })
+    set_keymap("n", "<leader>ef", ":NvimTreeFocus<CR>", { noremap = true, silent = true, desc = "[E]xplorer Focus" })
   end,
 }
