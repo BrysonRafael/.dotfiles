@@ -15,8 +15,8 @@ config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 14
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
-  left = 0,
-  right = 0,
+  left = "0.25cell",
+  right = "0.25cell",
   top = "0.5cell",
   bottom = 0,
 }
