@@ -19,6 +19,7 @@ alias dot="cd ~/.dotfiles"
 alias dot_git="cd ~/.dotfiles/git/"
 alias dot_nvim="cd ~/.dotfiles/nvim/.config/nvim/"
 alias dot_tmux="cd ~/.dotfiles/tmux/.config/tmux/"
+alias dot_wez="cd ~/.dotfiles/wezterm/.config/wezterm/"
 alias dot_zsh="cd ~/.dotfiles/zsh/"
 alias gcm="git checkout main"
 alias ls="ls -a"
@@ -30,21 +31,17 @@ alias zshconfig="nvim ~/.zshrc"
 
 # PLANNING CENTER CONFIG
 eval "$($HOME/Code/pco/bin/pco init -)"
-alias cloud-box="kitten ssh ubuntu@$(pco cloud-box ip)"
-export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
-export MYSQL_READER_PORT_3306_TCP_ADDR=127.0.0.1
-export MYSQL_READER_PORT_3306_TCP_PORT=3307
-export PATH="$HOME/pco-box/bin:/usr/local/bin:$PATH"
 
-# Source PCO Box when using cloud box
+# Cloud Box Config
 if [ -f /etc/os-release ]; then
-  # Source the /etc/os-release file to set environment variables
-  . /etc/os-release
-
-    # Check if the NAME variable contains "Ubuntu"
-    if [[ "$NAME" == *"Ubuntu"* ]]; then
-      source /home/ubuntu/pco-box/env.sh
-    fi
+  source /etc/os-release
+  if [[ $ID == "ubuntu" ]]; then
+    export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
+    export MYSQL_READER_PORT_3306_TCP_ADDR=127.0.0.1
+    export MYSQL_READER_PORT_3306_TCP_PORT=3307
+    export PATH="$HOME/pco-box/bin:/usr/local/bin:$PATH"
+    source /home/ubuntu/pco-box/env.sh
+  fi
 fi
 
 
