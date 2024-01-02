@@ -46,7 +46,7 @@ fi
 
 
 # WezTerm
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
   PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
   export PATH
 fi
