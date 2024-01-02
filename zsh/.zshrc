@@ -46,8 +46,10 @@ fi
 
 
 # WezTerm
-PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-export PATH
+if [ "$(uname)" == "Darwin" ]; then
+  PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+  export PATH
+fi
 
 
 # pyenv setup
