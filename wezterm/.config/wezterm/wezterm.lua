@@ -31,6 +31,11 @@ config.keys = {
     mods = "ALT",
     action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
   },
+  {
+    key = "C",
+    mods = "CTRL",
+    action = wezterm.action.CopyTo "ClipboardAndPrimarySelection",
+  },
 }
 
 return config
