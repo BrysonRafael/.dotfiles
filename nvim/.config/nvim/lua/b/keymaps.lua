@@ -5,10 +5,10 @@ vim.g.netrw_liststyle = 3
 local set_keymap = vim.api.nvim_set_keymap
 
 -- Resize windows with option + arrow keys
-set_keymap("n", "<M-Right>", ":vertical resize -2<CR>", { noremap = true, silent = true })
-set_keymap("n", "<M-Left>", ":vertical resize +2<CR>", { noremap = true, silent = true })
-set_keymap("n", "<M-Up>", ":resize -2<CR>", { noremap = true, silent = true })
-set_keymap("n", "<M-Down>", ":resize +2<CR>", { noremap = true, silent = true })
+set_keymap("n", "<M-l>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+set_keymap("n", "<M-h>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+set_keymap("n", "<M-k>", ":resize -2<CR>", { noremap = true, silent = true })
+set_keymap("n", "<M-j>", ":resize +2<CR>", { noremap = true, silent = true })
 
 -- Move to the next buffer
 set_keymap("n", "<leader>bn", ":bnext<CR>", { noremap = true, silent = true, desc = "[B]uffer Next" })
