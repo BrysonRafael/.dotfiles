@@ -56,10 +56,10 @@ end)
 
 config.keys = {
   -- Pane Naviation
-  { key = "h", mods = "CTRL|ALT", action = action.EmitEvent("ActivatePaneDirection-left") },
-  { key = "j", mods = "CTRL|ALT", action = action.EmitEvent("ActivatePaneDirection-down") },
-  { key = "k", mods = "CTRL|ALT", action = action.EmitEvent("ActivatePaneDirection-up") },
-  { key = "l", mods = "CTRL|ALT", action = action.EmitEvent("ActivatePaneDirection-right") },
+  { key = "h", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-left") },
+  { key = "j", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-down") },
+  { key = "k", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-up") },
+  { key = "l", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-right") },
 
   -- Split Panes
   { key = "-", mods = "CTRL|ALT", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
