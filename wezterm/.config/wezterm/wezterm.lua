@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local config = {}
+local action = wezterm.action
 
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
@@ -18,24 +19,61 @@ config.window_padding = {
   bottom = 0,
 }
 
+-- Setup Navigator WezTerm Integration
+-- https://github.com/numToStr/Navigator.nvim/wiki/WezTerm-Integration
+
+local function isViProcess(pane)
+  -- get_foreground_process_name On Linux, macOS and Windows, 
+  -- the process can be queried to determine this path. Other operating systems 
+  -- (notably, FreeBSD and other unix systems) are not currently supported
+  return pane:get_foreground_process_name():find("n?vim") ~= nil
+  -- return pane:get_title():find("n?vim") ~= nil
+end
+
+local function conditionalActivatePane(window, pane, pane_direction, vim_direction)
+  if isViProcess(pane) then
+    window:perform_action(
+      -- This should match the keybinds you set in Neovim.
+      action.SendKey({ key = vim_direction, mods = "CTRL"}),
+      pane
+    )
+  else
+    window:perform_action(action.ActivatePaneDirection(pane_direction), pane)
+  end
+end
+
+wezterm.on("ActivatePaneDirection-right", function(window, pane)
+  conditionalActivatePane(window, pane, "Right", "l")
+end)
+wezterm.on("ActivatePaneDirection-left", function(window, pane)
+  conditionalActivatePane(window, pane, "Left", "h")
+end)
+wezterm.on("ActivatePaneDirection-up", function(window, pane)
+  conditionalActivatePane(window, pane, "Up", "k")
+end)
+wezterm.on("ActivatePaneDirection-down", function(window, pane)
+  conditionalActivatePane(window, pane, "Down", "j")
+end)
+
 config.keys = {
-  -- Option + \ for Vertical Split
-  {
-    key = "-",
-    mods = "ALT",
-    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-  },
-    -- Option + - for Horizontal Split
-  {
-    key = "\\",
-    mods = "ALT",
-    action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
-  },
-  {
-    key = "C",
-    mods = "CTRL",
-    action = wezterm.action.CopyTo "ClipboardAndPrimarySelection",
-  },
+  -- Pane Naviation
+  { key = "h", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-left") },
+  { key = "j", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-down") },
+  { key = "k", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-up") },
+  { key = "l", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-right") },
+
+  -- Split Panes
+  { key = "-", mods = "ALT", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { key = "\\", mods = "ALT", action = action.SplitHorizontal({ domain = "CurrentPaneDomain"}) },
+
+  -- Pane Resizing
+  { key = "LeftArrow", mods = "ALT", action = action.AdjustPaneSize({ "Left", 5 }) },
+  { key = "DownArrow", mods = "ALT", action = action.AdjustPaneSize({ "Down", 5 }) },
+  { key = "UpArrow", mods = "ALT", action = action.AdjustPaneSize({ "Up", 5 }) },
+  { key = "RightArrow", mods = "ALT", action = action.AdjustPaneSize({ "Right", 5 }) },
+
+  -- Copy to clipboard
+  { key = "C", mods = "CTRL", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
 }
 
 return config
