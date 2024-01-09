@@ -18,7 +18,6 @@ function M.setup()
   require("b.lsp.json")
   require("b.lsp.lua")
   require("b.lsp.ruby")
-  require("b.lsp.tailwind")
   require("b.lsp.vim")
   require("b.lsp.yaml")
 end
