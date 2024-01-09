@@ -21,7 +21,6 @@ config.window_padding = {
 
 -- Setup Navigator WezTerm Integration
 -- https://github.com/numToStr/Navigator.nvim/wiki/WezTerm-Integration
-
 local function isViProcess(pane)
   -- get_foreground_process_name On Linux, macOS and Windows, 
   -- the process can be queried to determine this path. Other operating systems 
@@ -71,9 +70,14 @@ config.keys = {
   { key = "DownArrow", mods = "ALT", action = action.AdjustPaneSize({ "Down", 5 }) },
   { key = "UpArrow", mods = "ALT", action = action.AdjustPaneSize({ "Up", 5 }) },
   { key = "RightArrow", mods = "ALT", action = action.AdjustPaneSize({ "Right", 5 }) },
+  { key = "z", mods = "ALT", action = action.TogglePaneZoomState },
 
   -- Copy to clipboard
-  { key = "C", mods = "CTRL", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
+  { key = "C", mods = "CTRL", action = action.CopyTo("ClipboardAndPrimarySelection") },
+
+  -- Tab Navigation
+  { key = "[", mods = "ALT", action = action.ActivateTabRelative(-1) },
+  { key = "]", mods = "ALT", action = action.ActivateTabRelative(1) },
 }
 
 return config
