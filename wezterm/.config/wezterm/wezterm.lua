@@ -62,22 +62,22 @@ config.keys = {
   { key = "l", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-right") },
 
   -- Split Panes
-  { key = "-", mods = "CTRL|ALT", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-  { key = "\\", mods = "CTRL|ALT", action = action.SplitHorizontal({ domain = "CurrentPaneDomain"}) },
+  { key = "-", mods = "ALT", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { key = "\\", mods = "ALT", action = action.SplitHorizontal({ domain = "CurrentPaneDomain"}) },
 
   -- Pane Resizing
-  { key = "LeftArrow", mods = "CTRL|ALT", action = action.AdjustPaneSize({ "Left", 5 }) },
-  { key = "DownArrow", mods = "CTRL|ALT", action = action.AdjustPaneSize({ "Down", 5 }) },
-  { key = "UpArrow", mods = "CTRL|ALT", action = action.AdjustPaneSize({ "Up", 5 }) },
-  { key = "RightArrow", mods = "CTRL|ALT", action = action.AdjustPaneSize({ "Right", 5 }) },
-  { key = "z", mods = "CTRL|ALT", action = action.TogglePaneZoomState },
+  { key = "LeftArrow", mods = "ALT", action = action.AdjustPaneSize({ "Left", 5 }) },
+  { key = "DownArrow", mods = "ALT", action = action.AdjustPaneSize({ "Down", 5 }) },
+  { key = "UpArrow", mods = "ALT", action = action.AdjustPaneSize({ "Up", 5 }) },
+  { key = "RightArrow", mods = "ALT", action = action.AdjustPaneSize({ "Right", 5 }) },
+  { key = "z", mods = "ALT", action = action.TogglePaneZoomState },
 
   -- Copy to clipboard
   { key = "C", mods = "CTRL", action = action.CopyTo("ClipboardAndPrimarySelection") },
 
   -- Tab Navigation
-  { key = "[", mods = "CTRL|ALT", action = action.ActivateTabRelative(-1) },
-  { key = "]", mods = "CTRL|ALT", action = action.ActivateTabRelative(1) },
+  { key = "[", mods = "ALT", action = action.ActivateTabRelative(-1) },
+  { key = "]", mods = "ALT", action = action.ActivateTabRelative(1) },
 }
 
 return config
