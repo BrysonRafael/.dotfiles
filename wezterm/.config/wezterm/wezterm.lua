@@ -10,7 +10,7 @@ end
 
 config.color_scheme = "BlulocoDark"
 config.font_size = 14
-config.line_height = 1.1
+config.line_height = 1.2
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
   left = "0.5cell",
