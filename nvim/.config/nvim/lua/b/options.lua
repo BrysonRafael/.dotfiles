@@ -19,10 +19,6 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = false
 
--- wild
-opt.wildmenu = true
-opt.wildmode = {"list", "longest"}
-
 -- cursor line
 opt.cursorline = true
 
