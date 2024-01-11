@@ -76,8 +76,8 @@ config.keys = {
   { key = "C", mods = "CTRL", action = action.CopyTo("ClipboardAndPrimarySelection") },
 
   -- Tab Navigation
-  { key = "[", mods = "ALT", action = action.ActivateTabRelative(-1) },
-  { key = "]", mods = "ALT", action = action.ActivateTabRelative(1) },
+  { key = "h", mods = "ALT", action = action.ActivateTabRelative(-1) },
+  { key = "l", mods = "ALT", action = action.ActivateTabRelative(1) },
 }
 
 return config
