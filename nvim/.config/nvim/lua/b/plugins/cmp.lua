@@ -8,7 +8,13 @@ return {
 
     -- Adds LSP completion capabilities
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-path",
+    "FelipeLema/cmp-async-path",
+
+    -- Buffer words
+    "hrsh7th/cmp-buffer",
+
+    -- Signature help
+    "hrsh7th/cmp-nvim-lsp-signature-help",
 
     -- Adds a number of user-friendly snippets
     "rafamadriz/friendly-snippets",
@@ -19,6 +25,9 @@ return {
 
     -- Flipper gem
     { "wassimk/cmp-feature-flipper", version = "*" },
+
+    -- Gitmojis for commit messages
+    { "Dynge/gitmoji.nvim", dependencies = { "hrsh7th/nvim-cmp", }, opts = {}, ft = "gitcommit" },
   },
   config = function()
     local cmp = require "cmp"
@@ -67,10 +76,13 @@ return {
       sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "path" },
+        { name = "async_path" },
         { name = "rails-fixture-names" },
         { name = "rails-fixture-types" },
         { name = "feature-flipper" },
+        { name = "buffer" },
+        { name = "cmp-nvim-lsp-signature-help" },
+        { name = "gitmoji" },
       },
     }
   end
