@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="bira"
+ZSH_THEME="intheloop"
 
 plugins=(git rails tmux)
 
@@ -15,6 +15,7 @@ else
 fi
 
 # Aliases
+alias bcm_server="ssh -i \"Beacon Capital Management.pem\" ec2-user@ec2-54-196-196-35.compute-1.amazonaws.com"
 alias dot="cd ~/.dotfiles"
 alias dot_git="cd ~/.dotfiles/git/"
 alias dot_nvim="cd ~/.dotfiles/nvim/.config/nvim/"
@@ -61,3 +62,4 @@ if which pyenv &> /dev/null; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
+
