@@ -15,7 +15,6 @@ else
 fi
 
 # Aliases
-alias bcm_server="ssh -i \"Beacon Capital Management.pem\" ec2-user@ec2-54-196-196-35.compute-1.amazonaws.com"
 alias dot="cd ~/.dotfiles"
 alias dot_git="cd ~/.dotfiles/git/"
 alias dot_nvim="cd ~/.dotfiles/nvim/.config/nvim/"
