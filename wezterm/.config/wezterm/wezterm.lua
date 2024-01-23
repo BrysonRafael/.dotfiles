@@ -15,8 +15,6 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
   left = "0.5cell",
   right = "0.5cell",
-  top = "0.5cell",
-  bottom = 0,
 }
 
 -- Setup Navigator WezTerm Integration
