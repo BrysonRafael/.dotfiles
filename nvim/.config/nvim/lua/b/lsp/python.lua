@@ -2,14 +2,9 @@
 -- python language server
 --
 
-local lspconfig = require("lspconfig")
+local lsp = require("b.lsp")
 
-lspconfig.pylsp.setup({
-  capabilities = require("b.lsp").capabilities(),
-  on_attach = require("b.lsp").on_attach,
-})
-
-lspconfig.pyright.setup({
-  capabilities = require("b.lsp").capabilities(),
-  on_attach = require("b.lsp").on_attach,
+require("lspconfig").pylsp.setup({
+  capabilities = lsp.capabilities(),
+  on_attach = lsp.on_attach,
 })
