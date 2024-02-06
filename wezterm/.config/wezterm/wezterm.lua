@@ -12,10 +12,6 @@ config.color_scheme = "BlulocoDark"
 config.font_size = 14
 config.line_height = 1.2
 config.hide_tab_bar_if_only_one_tab = true
-config.window_padding = {
-  left = "0.5cell",
-  right = "0.5cell",
-}
 
 -- Setup Navigator WezTerm Integration
 -- https://github.com/numToStr/Navigator.nvim/wiki/WezTerm-Integration
@@ -39,6 +35,7 @@ local function conditionalActivatePane(window, pane, pane_direction, vim_directi
   end
 end
 
+-- Neovim Navigator Callbacks
 wezterm.on("ActivatePaneDirection-right", function(window, pane)
   conditionalActivatePane(window, pane, "Right", "l")
 end)
@@ -52,6 +49,31 @@ wezterm.on("ActivatePaneDirection-down", function(window, pane)
   conditionalActivatePane(window, pane, "Down", "j")
 end)
 
+-- Remove window padding when using Neovim
+wezterm.on("update-right-status", function(window, pane)
+  local cmd = pane:get_foreground_process_name()
+  if cmd:match("vi") or cmd:match("vim") or cmd:match("nvim") then
+    window:set_config_overrides({
+      window_padding = {
+        left = 0,
+        right = 0,
+        top = 0,
+        bottom = 0,
+      }
+    })
+  else
+    window:set_config_overrides({
+      window_padding = {
+        left = 10,
+        right = 10,
+        top = 10,
+        bottom = 10,
+      }
+    })
+  end
+end)
+
+-- Custom Keymaps
 config.keys = {
   -- Pane Naviation
   { key = "h", mods = "CTRL", action = action.EmitEvent("ActivatePaneDirection-left") },
