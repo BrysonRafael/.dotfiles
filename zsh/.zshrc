@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="candy"
-
 plugins=(git rails tmux)
 
 source $ZSH/oh-my-zsh.sh
@@ -62,3 +60,9 @@ if which pyenv &> /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+fpath=($fpath "/Users/brysonrafael/.zfunctions")
+
+# Set typewritten ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt typewritten
+export TYPEWRITTEN_CURSOR="block"
