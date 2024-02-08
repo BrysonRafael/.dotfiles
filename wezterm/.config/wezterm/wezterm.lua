@@ -8,8 +8,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = "BlulocoDark"
-config.font_size = 14
+config.color_scheme = "Neon (terminal.sexy)"
+config.font_size = 16
 config.line_height = 1.2
 config.hide_tab_bar_if_only_one_tab = true
 
