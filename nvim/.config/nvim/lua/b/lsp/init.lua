@@ -40,22 +40,19 @@ function M.on_attach(client)
   end, { desc = "LSP: format with language servers" })
 
   local set_keymap = vim.keymap.set
-  set_keymap("n", "gld", "<cmd>Telescope lsp_definitions<cr>", opts("goto definitions"))
-  set_keymap("n", "glt", "<cmd>Telescope lsp_type_definitions<cr>", opts("goto type definitions"))
-  set_keymap("n", "glD", vim.lsp.buf.declaration, opts("goto declaration"))
-  set_keymap("n", "gli", "<cmd>Telescope lsp_implementations<cr>", opts("goto implementations"))
-  set_keymap("n", "glr", "<cmd>Telescope lsp_references<cr>", opts("goto references"))
-  set_keymap("n", "glS", vim.lsp.buf.signature_help, opts("signature help"))
-  set_keymap("n", "gls", "<cmd>Telescope lsp_document_symbols<cr>", opts("document symbols"))
-  set_keymap("n", "glw", "<cmd>Telescope lsp_workspace_symbols<cr>", opts("workspace symbols"))
-  set_keymap("n", "<F2>", vim.lsp.buf.rename, opts("rename"))
-
-  set_keymap("n", "glh", function()
+  set_keymap("n", "<leader>ld", "<cmd>Telescope lsp_definitions<cr>", { desc = "Go to [d]efinition" })
+  set_keymap("n", "<leader>lt", "<cmd>Telescope lsp_type_definitions<cr>", { desc = "Go to [t]ype definition" })
+  set_keymap("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "Go to [D]eclaration" })
+  set_keymap("n", "<leader>li", "<cmd>Telescope lsp_implementations<cr>", { desc = "Go to [i]mplementation" })
+  set_keymap("n", "<leader>lr", "<cmd>Telescope lsp_references<cr>", { desc = "Go to [r]eferences" })
+  set_keymap("n", "<leader>lR", vim.lsp.buf.rename, { desc = "[R]ename" })
+  set_keymap("n", "<leader>ls", vim.lsp.buf.signature_help, { desc = "[s]ignature help" })
+  set_keymap("n", "<leader>lS", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Document [S]ymbols" })
+  set_keymap("n", "<leader>lh", function()
     vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled(0))
-  end)
-
-  set_keymap("n", "K", vim.lsp.buf.hover, opts("hover"))
-  set_keymap({ "n", "v" }, "gla", vim.lsp.buf.code_action, opts("code actions"))
+  end, { desc = "Inlay [h]int" })
+  set_keymap("n", "H", vim.lsp.buf.hover, opts("hover"))
+  set_keymap({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { desc = "Code [a]ctions" })
 
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false

@@ -53,15 +53,14 @@ return {
         prompt_title = "Live Grep in Open Files",
       }
     end
-    set_keymap("n", "<leader>s/", telescope_live_grep_open_files, { desc = "[S]earch [/] in Open Files" })
-    set_keymap("n", "<leader>ss", require("telescope.builtin").builtin, { desc = "[S]earch [S]elect Telescope" })
-    set_keymap("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
-    set_keymap("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
-    set_keymap("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-    set_keymap("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-    set_keymap("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-    set_keymap("n", "<leader>sG", ":LiveGrepGitRoot<cr>", { desc = "[S]earch by [G]rep on Git Root" })
-    set_keymap("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
-    set_keymap("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
+    set_keymap("n", "<leader>s/", telescope_live_grep_open_files, { desc = "[/] in Open Files" })
+    set_keymap("n", "<leader>ss", require("telescope.builtin").builtin, { desc = "[s]elect Telescope" })
+    set_keymap("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[f]iles" })
+    set_keymap("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[h]elp" })
+    set_keymap("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "Current [w]ord" })
+    set_keymap("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[g]rep" })
+    set_keymap("n", "<leader>sG", ":LiveGrepGitRoot<cr>", { desc = "[G]rep on Git Root" })
+    set_keymap("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[d]iagnostics" })
+    set_keymap("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[r]esume" })
   end
 }
