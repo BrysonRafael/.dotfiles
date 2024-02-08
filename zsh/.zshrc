@@ -66,3 +66,4 @@ fpath=($fpath "/Users/brysonrafael/.zfunctions")
 autoload -U promptinit; promptinit
 prompt typewritten
 export TYPEWRITTEN_CURSOR="block"
+export TYPEWRITTEN_PROMPT_LAYOUT="pure"
