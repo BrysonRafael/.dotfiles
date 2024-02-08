@@ -21,6 +21,3 @@ set_keymap("n", "<S-h>", ":bprev<CR>", { noremap = true, silent = true })
 
 -- Delete the current buffer
 set_keymap("n", "<S-d>", ":bd<CR>", { noremap = true, silent = true })
-
--- Source nvim config
-set_keymap("n", "<leader>sc", ":source ~/.config/nvim/init.lua<CR>", { noremap = true, silent = true, desc = "[S]ource Neovim Config" })
