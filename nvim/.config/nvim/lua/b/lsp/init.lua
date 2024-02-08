@@ -51,7 +51,7 @@ function M.on_attach(client)
   set_keymap("n", "<leader>lh", function()
     vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled(0))
   end, { desc = "Inlay [h]int" })
-  set_keymap("n", "H", vim.lsp.buf.hover, opts("hover"))
+  set_keymap("n", "K", vim.lsp.buf.hover, opts("hover"))
   set_keymap({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { desc = "Code [a]ctions" })
 
   if client.name == "tsserver" then
