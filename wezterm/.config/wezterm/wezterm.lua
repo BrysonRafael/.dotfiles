@@ -9,7 +9,7 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = "Neon (terminal.sexy)"
-config.font_size = 15
+config.font_size = 16
 config.line_height = 1.2
 config.hide_tab_bar_if_only_one_tab = true
 
@@ -64,10 +64,10 @@ wezterm.on("update-right-status", function(window, pane)
   else
     window:set_config_overrides({
       window_padding = {
-        left = 10,
-        right = 10,
-        top = 10,
-        bottom = 10,
+        left = 20,
+        right = 20,
+        top = 0,
+        bottom = 0,
       }
     })
   end
