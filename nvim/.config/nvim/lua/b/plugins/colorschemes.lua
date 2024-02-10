@@ -43,4 +43,10 @@ return {
     lazy = false,
     priority = 1000,
   },
+  {
+    "glepnir/zephyr-nvim",
+    requires = { "nvim-treesitter/nvim-treesitter", opt = true },
+    lazy = false,
+    priority = 1000,
+  }
 }
