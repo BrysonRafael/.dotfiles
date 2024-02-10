@@ -35,32 +35,32 @@ return {
 
     telescope.load_extension("fzf")
 
-    -- set keymaps
+    local builtin = require("telescope.builtin")
     local set_keymap = vim.keymap.set
-    set_keymap("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-    set_keymap("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+    set_keymap("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
+    set_keymap("n", "<leader><space>", builtin.buffers, { desc = "[ ] Find existing buffers" })
     set_keymap("n", "<leader>/", function()
       -- You can pass additional configuration to telescope to change theme, layout, etc.
-      require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
+      builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
         winblend = 10,
         previewer = false,
       })
     end, { desc = "[/] Fuzzily search in current buffer" })
 
     local function telescope_live_grep_open_files()
-      require("telescope.builtin").live_grep {
+      builtin.live_grep {
         grep_open_files = true,
         prompt_title = "Live Grep in Open Files",
       }
     end
     set_keymap("n", "<leader>s/", telescope_live_grep_open_files, { desc = "[/] in Open Files" })
-    set_keymap("n", "<leader>ss", require("telescope.builtin").builtin, { desc = "[s]elect Telescope" })
-    set_keymap("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[f]iles" })
-    set_keymap("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[h]elp" })
-    set_keymap("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "Current [w]ord" })
-    set_keymap("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[g]rep" })
+    set_keymap("n", "<leader>ss", builtin.builtin, { desc = "[s]elect Telescope" })
+    set_keymap("n", "<leader>sf", builtin.find_files, { desc = "[f]iles" })
+    set_keymap("n", "<leader>sh", builtin.help_tags, { desc = "[h]elp" })
+    set_keymap("n", "<leader>sw", builtin.grep_string, { desc = "Current [w]ord" })
+    set_keymap("n", "<leader>sg", builtin.live_grep, { desc = "[g]rep" })
     set_keymap("n", "<leader>sG", ":LiveGrepGitRoot<cr>", { desc = "[G]rep on Git Root" })
-    set_keymap("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[d]iagnostics" })
-    set_keymap("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[r]esume" })
+    set_keymap("n", "<leader>sd", builtin.diagnostics, { desc = "[d]iagnostics" })
+    set_keymap("n", "<leader>sr", builtin.resume, { desc = "[r]esume" })
   end
 }
