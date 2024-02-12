@@ -10,10 +10,11 @@ return {
       ensure_installed = {
         "bashls",
         "cssls",
-        "cssmodules_ls",
+        "emmet_language_server",
         "html",
         "jsonls",
         "lua_ls",
+        "pylsp",
         "tsserver",
         "vimls",
         "yamlls",
