@@ -16,6 +16,7 @@ if not utils.ruby_lsp_installed() and utils.installed_via_bundler("solargraph") 
     },
     settings = {
       solargraph = {
+        completion = true,
         diagnostics = not utils.rubocop_supports_lsp(),
         logLevel = "debug",
       },
