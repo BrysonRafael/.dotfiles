@@ -10,24 +10,12 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "FelipeLema/cmp-async-path",
 
-    -- Buffer words
-    "hrsh7th/cmp-buffer",
-
     -- Signature help
     "hrsh7th/cmp-nvim-lsp-signature-help",
-
-    -- Adds a number of user-friendly snippets
-    "rafamadriz/friendly-snippets",
 
     -- Rails fixtures
     { "wassimk/cmp-rails-fixture-types", version = "*", ft = "ruby" },
     { "wassimk/cmp-rails-fixture-names", version = "*", ft = "ruby" },
-
-    -- Flipper gem
-    { "wassimk/cmp-feature-flipper", version = "*" },
-
-    -- Gitmojis for commit messages
-    { "Dynge/gitmoji.nvim", dependencies = { "hrsh7th/nvim-cmp", }, opts = {}, ft = "gitcommit" },
   },
   config = function()
     local cmp = require "cmp"
@@ -79,10 +67,7 @@ return {
         { name = "async_path" },
         { name = "rails-fixture-names" },
         { name = "rails-fixture-types" },
-        { name = "feature-flipper" },
-        { name = "buffer" },
         { name = "cmp-nvim-lsp-signature-help" },
-        { name = "gitmoji" },
       },
     }
   end
