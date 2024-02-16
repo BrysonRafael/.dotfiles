@@ -60,10 +60,5 @@ if which pyenv &> /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
-fpath=($fpath "/Users/brysonrafael/.zfunctions")
-
-# Set typewritten ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt typewritten
-export TYPEWRITTEN_CURSOR="block"
-export TYPEWRITTEN_PROMPT_LAYOUT="pure"
+# Starship prompt
+eval "$(starship init zsh)"
