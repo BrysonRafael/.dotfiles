@@ -59,7 +59,8 @@ wezterm.on("update-right-status", function(window, pane)
         right = 0,
         top = 0,
         bottom = 0,
-      }
+      },
+      line_height = 1.0,
     })
   else
     window:set_config_overrides({
@@ -68,7 +69,8 @@ wezterm.on("update-right-status", function(window, pane)
         right = 20,
         top = 0,
         bottom = 0,
-      }
+      },
+      line_height = 1.2,
     })
   end
 end)
