@@ -1,6 +1,6 @@
-require("b.keymaps")
-require("b.options")
-require("b.lazy")
-require("b.autocmds")
+require 'b.keymaps'
+require 'b.options'
+require 'b.lazy'
+require 'b.autocmds'
 
-require("b.lsp").setup()
+require('b.lsp').setup()

@@ -2,15 +2,15 @@
 -- ruby language servers
 --
 
-local utils = require("b.utils")
-local lspconfig = require("lspconfig")
-local capabilities = require("b.lsp").capabilities()
-local on_attach = require("b.lsp").on_attach
+local utils = require 'b.utils'
+local lspconfig = require 'lspconfig'
+local capabilities = require('b.lsp').capabilities()
+local on_attach = require('b.lsp').on_attach
 
 -- solargraph
-if not utils.ruby_lsp_installed() and utils.installed_via_bundler("solargraph") then
-  lspconfig.solargraph.setup({
-    cmd = { "bundle", "exec", "solargraph", "stdio" },
+if not utils.ruby_lsp_installed() and utils.installed_via_bundler 'solargraph' then
+  lspconfig.solargraph.setup {
+    cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
     init_options = {
       formatting = false,
     },
@@ -18,70 +18,65 @@ if not utils.ruby_lsp_installed() and utils.installed_via_bundler("solargraph") 
       solargraph = {
         completion = true,
         diagnostics = not utils.rubocop_supports_lsp(),
-        logLevel = "debug",
+        logLevel = 'debug',
       },
     },
     commands = {
       SolargraphDocumentGems = {
         function()
-          vim.lsp.buf_notify(0, "$/solargraph/documentGems")
+          vim.lsp.buf_notify(0, '$/solargraph/documentGems')
         end,
-        description = "Build YARD documentation for installed gems",
+        description = 'Build YARD documentation for installed gems',
       },
       SolargraphDocumentGemsWithRebuild = {
         function()
-          vim.lsp.buf_notify(0, "$/solargraph/documentGems", { rebuild = true })
+          vim.lsp.buf_notify(0, '$/solargraph/documentGems', { rebuild = true })
         end,
-        description = "Build YARD documentation for installed gems",
+        description = 'Build YARD documentation for installed gems',
       },
       SolargraphCheckGemVersion = {
         function()
-          vim.lsp.buf_notify(0, "$/solargraph/checkGemVersion", { verbose = true })
+          vim.lsp.buf_notify(0, '$/solargraph/checkGemVersion', { verbose = true })
         end,
-        description = "Check if a newer version of the gem is available",
+        description = 'Check if a newer version of the gem is available',
       },
       SolargraphRestartServer = {
         function()
-          vim.lsp.buf_notify(0, "$/solargraph/restartServer")
+          vim.lsp.buf_notify(0, '$/solargraph/restartServer')
         end,
-        description = "A notification sent from the server to the client requesting that the client shut down and restart the server",
+        description = 'A notification sent from the server to the client requesting that the client shut down and restart the server',
       },
     },
     capabilities = capabilities,
     on_attach = on_attach,
-  })
+  }
 end
 
 -- ruby-lsp
-if utils.ruby_lsp_installed() and utils.installed_via_bundler("ruby-lsp") then
-  lspconfig.ruby_ls.setup({
+if utils.ruby_lsp_installed() and utils.installed_via_bundler 'ruby-lsp' then
+  lspconfig.ruby_ls.setup {
     init_options = {
-      formatter = "rubocop",
+      formatter = 'rubocop',
     },
     capabilities = capabilities,
     on_attach = on_attach,
-  })
+  }
 end
 
 -- syntax_tree
-if utils.installed_via_bundler("syntax_tree") then
-  lspconfig.syntax_tree.setup({
-    cmd = { "bundle", "exec", "stree", "lsp" },
+if utils.installed_via_bundler 'syntax_tree' then
+  lspconfig.syntax_tree.setup {
+    cmd = { 'bundle', 'exec', 'stree', 'lsp' },
     capabilities = capabilities,
     on_attach = on_attach,
-  })
+  }
 end
 
 -- rubocop
-if
-  not utils.ruby_lsp_installed()
-  and utils.installed_via_bundler("rubocop")
-  and utils.config_exists(".rubocop.yml")
-  and utils.rubocop_supports_lsp()
-then
-  lspconfig.rubocop.setup({
-    cmd = { "bundle", "exec", "rubocop", "--lsp" },
+if not utils.ruby_lsp_installed() and utils.installed_via_bundler 'rubocop' and utils.config_exists '.rubocop.yml' and utils.rubocop_supports_lsp() then
+  lspconfig.rubocop.setup {
+    cmd = { 'bundle', 'exec', 'rubocop', '--lsp' },
     capabilities = capabilities,
     on_attach = on_attach,
-  })
+  }
 end
