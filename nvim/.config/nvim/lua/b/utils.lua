@@ -1,7 +1,7 @@
 local M = {}
 
 function M.installed_via_bundler(gemname)
-  local gemfile = vim.fn.getcwd() .. "/Gemfile.lock"
+  local gemfile = vim.fn.getcwd() .. '/Gemfile.lock'
 
   if vim.fn.filereadable(gemfile) == 0 then
     return false
@@ -48,7 +48,7 @@ function M.gemfile()
 end
 
 function M.rubocop_supports_lsp()
-  local version = M.installed_gem_version('rubocop')
+  local version = M.installed_gem_version 'rubocop'
 
   return version and version >= 1.53
 end
