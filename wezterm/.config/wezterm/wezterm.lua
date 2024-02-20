@@ -67,8 +67,8 @@ wezterm.on("update-right-status", function(window, pane)
       window_padding = {
         left = 20,
         right = 20,
-        top = 0,
-        bottom = 0,
+        top = 20,
+        bottom = 20,
       },
       line_height = 1.2,
     })
