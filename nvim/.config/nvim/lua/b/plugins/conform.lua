@@ -6,6 +6,9 @@ return {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         javascript = { 'prettier' },
+        javascriptreact = { 'prettier' },
+        typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
       },
       format_on_save = {
         timeout_ms = 500,
