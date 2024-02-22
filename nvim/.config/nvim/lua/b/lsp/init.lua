@@ -12,7 +12,6 @@ function M.setup()
   -- configure servers
   require 'b.lsp.bash'
   require 'b.lsp.css'
-  require 'b.lsp.emmet'
   require 'b.lsp.html'
   require 'b.lsp.javascript'
   require 'b.lsp.json'
