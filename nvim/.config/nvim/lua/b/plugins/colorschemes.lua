@@ -18,8 +18,13 @@ return {
     'EdenEast/nightfox.nvim',
     lazy = false,
     priority = 1000,
+  },
+  {
+    'embark-theme/vim',
+    lazy = false,
+    priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'carbonfox'
+      vim.cmd.colorscheme 'embark'
     end,
   },
 }
