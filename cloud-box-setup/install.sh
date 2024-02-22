@@ -36,7 +36,7 @@ stow tmux
 cd ~
 
 # Source tmux config
-tmux source-file ~/.config/tmux/tmux.conf
+tmux source-file ~/.tmux.conf
 
 # install neovim plugins
 nvim --headless "+Lazy! sync" +qall
