@@ -1,0 +1,46 @@
+import = ["~/.config/alacritty/themes/xterm.toml"]
+
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 16
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 4
+
+[scrolling]
+history = 5000
+
+[window]
+dynamic_padding = true
+
+[window.dimensions]
+columns = 120
+lines = 30
+
+[window.padding]
+x = 8
+y = 8
+
+[terminal]
+osc52 = "CopyPaste"
