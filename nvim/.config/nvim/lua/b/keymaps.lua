@@ -33,3 +33,6 @@ set_keymap('n', '<Tab>p', ':tabprevious<CR>', { noremap = true, silent = true })
 
 -- Close tab
 set_keymap('n', '<Tab>d', ':tabclose<CR>', { noremap = true, silent = true })
+
+-- Open Lazygit
+set_keymap('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true, desc = 'Git [g]ui' })
