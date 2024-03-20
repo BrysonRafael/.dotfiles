@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/themes/xterm.toml"]
+import = ["~/.config/alacritty/themes/catppuccin_mocha.toml"]
 
 live_config_reload = true
 
@@ -6,7 +6,7 @@ live_config_reload = true
 TERM = "xterm-256color"
 
 [font]
-size = 16
+size = 18
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -24,23 +24,15 @@ style = "Italic"
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
-[font.offset]
-x = 1
-y = 4
-
 [scrolling]
 history = 5000
 
 [window]
-dynamic_padding = true
+dynamic_padding = false
 
 [window.dimensions]
 columns = 120
 lines = 30
-
-[window.padding]
-x = 8
-y = 8
 
 [terminal]
 osc52 = "CopyPaste"

@@ -2,20 +2,18 @@ return {
   -- Autocompletion
   'hrsh7th/nvim-cmp',
   dependencies = {
-    -- Snippet Engine & its associated nvim-cmp source
-    'L3MON4D3/LuaSnip',
+    {
+      'L3MON4D3/LuaSnip',
+      version = 'v2.*',
+      build = 'make install_jsregexp',
+    },
     'saadparwaiz1/cmp_luasnip',
 
     -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp',
-    'FelipeLema/cmp-async-path',
 
     -- Signature help
     'hrsh7th/cmp-nvim-lsp-signature-help',
-
-    -- Rails fixtures
-    { 'wassimk/cmp-rails-fixture-types', version = '*', ft = 'ruby' },
-    { 'wassimk/cmp-rails-fixture-names', version = '*', ft = 'ruby' },
   },
   config = function()
     local cmp = require 'cmp'
@@ -64,9 +62,6 @@ return {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'async_path' },
-        { name = 'rails-fixture-names' },
-        { name = 'rails-fixture-types' },
         { name = 'cmp-nvim-lsp-signature-help' },
       },
     }

@@ -26,3 +26,6 @@ log/*
 # XCode
 /ios/*
 /android/*
+
+# Alacritty themes
+~/.dotfiles/alacritty/.config/alacritty/themes/*

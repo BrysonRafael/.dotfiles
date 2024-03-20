@@ -1,7 +1,3 @@
---
--- ruby language servers
---
-
 local utils = require 'b.utils'
 local lspconfig = require 'lspconfig'
 local capabilities = require('b.lsp').capabilities()
