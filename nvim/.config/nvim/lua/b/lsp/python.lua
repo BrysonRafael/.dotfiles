@@ -1,7 +1,3 @@
---
--- python language server
---
-
 local lsp = require 'b.lsp'
 
 require('lspconfig').pylsp.setup {

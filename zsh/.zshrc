@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="intheloop"
+# ZSH_THEME="intheloop"
 plugins=(git rails tmux)
 
 source $ZSH/oh-my-zsh.sh
@@ -15,12 +15,14 @@ fi
 
 # Aliases
 alias dot="cd ~/.dotfiles"
+alias dot_alacritty="cd ~/.dotfiles/alacritty/.config/alacritty/"
 alias dot_git="cd ~/.dotfiles/git/"
 alias dot_nvim="cd ~/.dotfiles/nvim/.config/nvim/"
 alias dot_tmux="cd ~/.dotfiles/tmux/"
 alias dot_wez="cd ~/.dotfiles/wezterm/.config/wezterm/"
 alias dot_zsh="cd ~/.dotfiles/zsh/"
 alias gcm="git checkout main"
+alias lg="lazygit"
 alias ls="ls -a --color=auto -FC"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vi="nvim"
@@ -60,3 +62,5 @@ if which pyenv &> /dev/null; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
+
+eval "$(starship init zsh)"

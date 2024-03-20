@@ -1,7 +1,3 @@
---
--- javascript language servers
---
-
 local capabilities = require('b.lsp').capabilities()
 local on_attach = require('b.lsp').on_attach
 
