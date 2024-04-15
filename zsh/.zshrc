@@ -14,6 +14,7 @@ else
 fi
 
 # Aliases
+alias clobber="bundle exec rake assets:clobber"
 alias dot="cd ~/.dotfiles"
 alias dot_alacritty="cd ~/.dotfiles/alacritty/.config/alacritty/"
 alias dot_git="cd ~/.dotfiles/git/"
@@ -25,6 +26,7 @@ alias gcm="git checkout main"
 alias lg="lazygit"
 alias ls="ls -a --color=auto -FC"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias precompile="bundle exec rake --trace assets:precompile"
 alias vi="nvim"
 alias vim="nvim"
 alias zshconfig="nvim ~/.zshrc"
