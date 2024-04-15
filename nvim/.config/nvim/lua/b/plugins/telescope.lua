@@ -3,18 +3,21 @@ return {
   branch = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'BurntSushi/ripgrep',
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    'nvim-telescope/telescope-frecency.nvim',
     {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make',
-      cond = function()
-        return vim.fn.executable 'make' == 1
-      end,
+      'nvim-telescope/telescope-live-grep-args.nvim',
+      -- This will not install any breaking changes.
+      -- For major updates, this must be adjusted manually.
+      version = '^1.0.0',
     },
     'nvim-tree/nvim-web-devicons',
   },
   config = function()
     local telescope = require 'telescope'
     local actions = require 'telescope.actions'
+    local lga_actions = require 'telescope-live-grep-args.actions'
 
     telescope.setup {
       defaults = {
@@ -25,14 +28,34 @@ return {
           },
         },
       },
+      extensions = {
+        fzf = {
+          fuzzy = true,
+          override_generic_sorter = true,
+          override_file_sorter = true,
+          case_mode = 'smart_case',
+        },
+        live_grep_args = {
+          auto_quoting = true,
+          mappings = {
+            i = {
+              ['<C-k>'] = lga_actions.quote_prompt(),
+              ['<C-i>'] = lga_actions.quote_prompt { postfix = ' --iglob ' },
+            },
+          },
+        },
+      },
     }
 
     telescope.load_extension 'fzf'
+    telescope.load_extension 'frecency'
 
     local builtin = require 'telescope.builtin'
     local set_keymap = vim.keymap.set
     set_keymap('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-    set_keymap('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    set_keymap('n', '<leader><space>', function()
+      require('telescope').extensions.frecency.frecency { workspace = 'CWD' }
+    end, { desc = '[ ] Find recently used files' })
     set_keymap('n', '<leader>/', function()
       builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         winblend = 10,
@@ -51,7 +74,9 @@ return {
     set_keymap('n', '<leader>sf', builtin.find_files, { desc = '[f]iles' })
     set_keymap('n', '<leader>sh', builtin.help_tags, { desc = '[h]elp' })
     set_keymap('n', '<leader>sw', builtin.grep_string, { desc = 'Current [w]ord' })
-    set_keymap('n', '<leader>sg', builtin.live_grep, { desc = '[g]rep' })
+    set_keymap('n', '<leader>sg', function()
+      telescope.extensions.live_grep_args.live_grep_args()
+    end, { desc = '[g]rep' })
     set_keymap('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[G]rep on Git Root' })
     set_keymap('n', '<leader>sd', builtin.diagnostics, { desc = '[d]iagnostics' })
     set_keymap('n', '<leader>sr', builtin.resume, { desc = '[r]esume' })
