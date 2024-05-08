@@ -13,6 +13,11 @@ else
   export EDITOR="nvim"
 fi
 
+# Theme
+export ZSH_THEME="robbyrussell"
+
+source $ZSH/oh-my-zsh.sh
+
 # Aliases
 alias clobber="bundle exec rake assets:clobber"
 alias dot="cd ~/.dotfiles"
