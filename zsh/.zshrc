@@ -14,7 +14,7 @@ else
 fi
 
 # Theme
-export ZSH_THEME="avit"
+export ZSH_THEME="intheloop"
 
 source $ZSH/oh-my-zsh.sh
 
