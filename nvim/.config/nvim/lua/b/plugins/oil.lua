@@ -9,6 +9,10 @@ return {
       },
     }
 
+    -- Open parent directory in current window
     vim.keymap.set('n', '-', ':Oil<CR>', { desc = 'Open parent directory' })
+
+    -- Open parent directory in floating window
+    vim.keymap.set('n', '<leader>-', ':Oil --float<CR>', { desc = 'Open parent directory in floating window' })
   end,
 }
