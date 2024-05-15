@@ -80,6 +80,7 @@ return {
     set_keymap('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[G]rep on Git Root' })
     set_keymap('n', '<leader>sd', builtin.diagnostics, { desc = '[d]iagnostics' })
     set_keymap('n', '<leader>sr', builtin.resume, { desc = '[r]esume' })
+    set_keymap('n', '<leader>sR', builtin.registers, { desc = '[R]egisters' })
     set_keymap('n', '<leader>sb', builtin.buffers, { desc = '[b]uffers' })
   end,
 }
