@@ -14,14 +14,24 @@ return {
 
     -- Signature help
     'hrsh7th/cmp-nvim-lsp-signature-help',
+
+    -- Completion icons
+    'onsails/lspkind.nvim',
   },
   config = function()
     local cmp = require 'cmp'
+    local lspkind = require 'lspkind'
     local luasnip = require 'luasnip'
     require('luasnip.loaders.from_vscode').lazy_load()
     luasnip.config.setup {}
 
     cmp.setup {
+      formatting = lspkind.cmp_format {
+        mode = 'symbol',
+        maxwidth = 50,
+        ellipsis_chat = '...',
+        show_labelDetails = true,
+      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
