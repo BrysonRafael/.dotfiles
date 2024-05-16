@@ -28,6 +28,11 @@ return {
           },
         },
       },
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
+      },
       extensions = {
         fzf = {
           fuzzy = true,
