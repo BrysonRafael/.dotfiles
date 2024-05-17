@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.netrw_liststyle = 3
 
-local set_keymap = vim.api.nvim_set_keymap
+local set_keymap = vim.keymap.set
 
 -- Resize buffer panes with option + arrow keys
 set_keymap('n', '<S-Right>', ':vertical resize -2<CR>', { noremap = true, silent = true })
