@@ -14,7 +14,7 @@ else
 fi
 
 # Theme
-export ZSH_THEME="intheloop"
+export ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,6 +24,7 @@ alias dot="cd ~/.dotfiles"
 alias dot_alacritty="cd ~/.dotfiles/alacritty/.config/alacritty/"
 alias dot_git="cd ~/.dotfiles/git/"
 alias dot_nvim="cd ~/.dotfiles/nvim/.config/nvim/"
+alias dot_starship="cd ~/.dotfiles/starship/.config/"
 alias dot_tmux="cd ~/.dotfiles/tmux/"
 alias dot_wez="cd ~/.dotfiles/wezterm/.config/wezterm/"
 alias dot_zsh="cd ~/.dotfiles/zsh/"
@@ -69,3 +70,5 @@ if which pyenv &> /dev/null; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
+
+eval "$(starship init zsh)"
