@@ -29,3 +29,6 @@ log/*
 
 # Alacritty themes
 ~/.dotfiles/alacritty/.config/alacritty/themes/*
+
+# Ctag Indexes
+tags
