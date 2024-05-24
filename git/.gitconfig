@@ -7,7 +7,7 @@
 	name = Bryson Rafael
 	email = bryson.rafael@planningcenter.com
 [core]
-	excludesfile = /Users/brysonrafael/.gitignore
+	excludesFile = /Users/brysonrafael/.gitignore
 	editor = nvim
 [push]
 	autoSetupRemote = true
