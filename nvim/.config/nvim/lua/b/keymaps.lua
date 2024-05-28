@@ -7,8 +7,8 @@ local set_keymap = vim.keymap.set
 -- Resize buffer panes with option + arrow keys
 set_keymap('n', '<S-Right>', ':vertical resize -2<CR>', { noremap = true, silent = true })
 set_keymap('n', '<S-Left>', ':vertical resize +2<CR>', { noremap = true, silent = true })
-set_keymap('n', '<S-Up>', ':resize -2<CR>', { noremap = true, silent = true })
-set_keymap('n', '<S-Down>', ':resize +2<CR>', { noremap = true, silent = true })
+set_keymap('n', '<S-Up>', ':resize +2<CR>', { noremap = true, silent = true })
+set_keymap('n', '<S-Down>', ':resize -2<CR>', { noremap = true, silent = true })
 
 -- Make buffer panes same width
 set_keymap('n', '<leader>=', ':wincmd =<CR>', { noremap = true, silent = true, desc = '[=] Equalize buffer pane widths' })
