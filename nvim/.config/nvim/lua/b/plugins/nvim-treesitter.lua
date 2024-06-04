@@ -42,6 +42,10 @@ return {
         'vim',
         'yaml',
       },
+      keymaps = {
+        ['im'] = '@block.inner',
+        ['am'] = '@block.outer',
+      },
     }
   end,
 }
