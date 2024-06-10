@@ -49,7 +49,7 @@ if utils.installed_via_bundler 'solargraph' and not utils.ruby_lsp_installed() a
 end
 
 -- ruby-lsp
-if utils.ruby_lsp_installed() and utils.installed_via_bundler 'ruby-lsp' and not utils.installed_via_bundler 'solargraph' then
+if (utils.ruby_lsp_installed() or utils.installed_via_bundler 'ruby-lsp') and not utils.installed_via_bundler 'solargraph' then
   local function add_ruby_deps_command(client, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'RubyLSPShowDependencies', function(opts)
       local params = vim.lsp.util.make_text_document_params()
@@ -140,7 +140,7 @@ if utils.installed_via_bundler 'syntax_tree' then
 end
 
 -- rubocop
-if not utils.ruby_lsp_installed() and utils.installed_via_bundler 'rubocop' and utils.config_exists '.rubocop.yml' and utils.rubocop_supports_lsp() then
+if not utils.ruby_lsp_setup() and utils.installed_via_bundler 'rubocop' and utils.config_exists '.rubocop.yml' and utils.rubocop_supports_lsp() then
   lspconfig.rubocop.setup {
     cmd = { 'bundle', 'exec', 'rubocop', '--lsp' },
     capabilities = capabilities,
