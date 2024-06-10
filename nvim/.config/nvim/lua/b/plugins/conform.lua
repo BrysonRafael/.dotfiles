@@ -7,8 +7,6 @@ return {
         python = { 'isort', 'black' },
         javascript = { 'prettier' },
         javascriptreact = { 'prettier' },
-        eruby = { 'rubocop' },
-        ruby = { 'rubocop' },
         typescript = { 'prettier' },
         typescriptreact = { 'prettier' },
       },
