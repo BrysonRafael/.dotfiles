@@ -59,6 +59,12 @@ function M.ruby_lsp_installed()
   return M.is_dir(directory)
 end
 
+function M.ruby_lsp_setup()
+  local directory = vim.fn.getcwd() .. '/.ruby-lsp'
+
+  return M.is_dir(directory)
+end
+
 function M.config_exists(filename)
   local file = vim.fn.getcwd() .. '/' .. filename
 
