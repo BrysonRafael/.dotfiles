@@ -36,30 +36,7 @@ alias precompile="bundle exec rake --trace assets:precompile"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
-
-
-# Zellij
 alias z="zellij"
-function zs() {
-  zellij -s $1
-}
-
-function za() {
-  zellij attach -s $1
-}
-
-alias zdas="zellij delete-all-sessions"
-function zds() {
-  zellij delete-session -s $1
-}
-
-alias zkas="zellij kill-all"
-function zks() {
-  zellij kill-session -s $1
-}
-
-alias zls="zellij list-sessions"
-
 
 # PLANNING CENTER CONFIG
 eval "$($HOME/Code/pco/bin/pco init -)"
