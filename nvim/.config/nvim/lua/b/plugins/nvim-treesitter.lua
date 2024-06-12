@@ -22,6 +22,7 @@ return {
       ensure_installed = {
         'bash',
         'css',
+        'diff',
         'dockerfile',
         'git_config',
         'git_rebase',
