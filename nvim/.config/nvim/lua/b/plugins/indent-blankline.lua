@@ -4,4 +4,7 @@ return {
   dependencies = {
     'HiPhish/rainbow-delimiters.nvim',
   },
+  config = function()
+    require('ibl').setup {}
+  end,
 }
