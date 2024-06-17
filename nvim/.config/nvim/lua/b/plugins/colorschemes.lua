@@ -1,11 +1,14 @@
 return {
   {
-    'loctvl842/monokai-pro.nvim',
-    name = 'monokai-pro',
+    'sainnhe/sonokai',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'monokai-pro-default'
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.sonokai_enable_italic = true
+      vim.g.sonokai_style = 'shusia'
+      vim.cmd.colorscheme 'sonokai'
     end,
   },
 }
