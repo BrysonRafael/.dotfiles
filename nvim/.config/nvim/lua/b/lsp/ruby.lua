@@ -49,7 +49,9 @@ if utils.installed_via_bundler 'solargraph' and not utils.ruby_lsp_installed() a
 end
 
 -- ruby-lsp
-if (utils.ruby_lsp_installed() or utils.installed_via_bundler 'ruby-lsp') and not utils.installed_via_bundler 'solargraph' then
+if
+  (utils.ruby_lsp_installed() or utils.installed_via_bundler 'ruby-lsp' or utils.ruby_lsp_installed_globally()) and not utils.installed_via_bundler 'solargraph'
+then
   local function add_ruby_deps_command(client, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'RubyLSPShowDependencies', function(opts)
       local params = vim.lsp.util.make_text_document_params()
