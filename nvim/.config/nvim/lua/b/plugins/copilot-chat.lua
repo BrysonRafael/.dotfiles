@@ -8,7 +8,7 @@ return {
     },
     config = function()
       local chat = require 'CopilotChat'
-      chat.setup { debug = true }
+      chat.setup { debug = true, window = { layout = 'float', zindex = 1 } }
 
       local function quick_chat()
         local input = vim.fn.input 'Quick Chat: '
