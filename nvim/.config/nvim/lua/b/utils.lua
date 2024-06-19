@@ -59,6 +59,14 @@ function M.ruby_lsp_installed()
   return M.is_dir(directory)
 end
 
+function M.ruby_lsp_installed_globally()
+  local handle = io.popen 'rbenv which ruby-lsp'
+  local result = handle:read '*a'
+  handle:close()
+
+  return result:find 'ruby-lsp' ~= nil
+end
+
 function M.ruby_lsp_setup()
   local directory = vim.fn.getcwd() .. '/.ruby-lsp'
 
