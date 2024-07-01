@@ -6,7 +6,7 @@ return {
       ['<leader>c'] = { name = '[c]opiot chat', _ = 'which_key_ignore' },
       ['<leader>l'] = { name = '[l]sp', _ = 'which_key_ignore' },
       ['<leader>r'] = { name = '[r]unner', _ = 'which_key_ignore' },
-      ['<leader>s'] = { name = '[s]earch', _ = 'which_key_ignore' },
+      ['<leader>s'] = { name = '[f]ind', _ = 'which_key_ignore' },
       ['<leader>t'] = { name = '[t]est', _ = 'which_key_ignore' },
       ['<leader>-'] = { name = '[-] Oil File Explorer', _ = 'which_key_ignore' },
     }

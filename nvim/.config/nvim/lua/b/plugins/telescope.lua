@@ -74,18 +74,18 @@ return {
         prompt_title = 'Live Grep in Open Files',
       }
     end
-    set_keymap('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[/] in Open Files' })
-    set_keymap('n', '<leader>ss', builtin.builtin, { desc = '[s]elect Telescope' })
-    set_keymap('n', '<leader>sf', builtin.find_files, { desc = '[f]iles' })
-    set_keymap('n', '<leader>sh', builtin.help_tags, { desc = '[h]elp' })
-    set_keymap('n', '<leader>sw', builtin.grep_string, { desc = 'Current [w]ord' })
-    set_keymap('n', '<leader>sg', function()
+    set_keymap('n', '<leader>f/', telescope_live_grep_open_files, { desc = '[/] in Open Files' })
+    set_keymap('n', '<leader>fs', builtin.builtin, { desc = '[s]elect Telescope' })
+    set_keymap('n', '<leader>ff', builtin.find_files, { desc = '[f]iles' })
+    set_keymap('n', '<leader>fh', builtin.help_tags, { desc = '[h]elp' })
+    set_keymap('n', '<leader>fw', builtin.grep_string, { desc = 'Current [w]ord' })
+    set_keymap('n', '<leader>fg', function()
       telescope.extensions.live_grep_args.live_grep_args()
     end, { desc = '[g]rep' })
-    set_keymap('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[G]rep on Git Root' })
-    set_keymap('n', '<leader>sd', builtin.diagnostics, { desc = '[d]iagnostics' })
-    set_keymap('n', '<leader>sr', builtin.resume, { desc = '[r]esume' })
-    set_keymap('n', '<leader>sR', builtin.registers, { desc = '[R]egisters' })
-    set_keymap('n', '<leader>sb', builtin.buffers, { desc = '[b]uffers' })
+    set_keymap('n', '<leader>fG', ':LiveGrepGitRoot<cr>', { desc = '[G]rep on Git Root' })
+    set_keymap('n', '<leader>fd', builtin.diagnostics, { desc = '[d]iagnostics' })
+    set_keymap('n', '<leader>fr', builtin.resume, { desc = '[r]esume' })
+    set_keymap('n', '<leader>fR', builtin.registers, { desc = '[R]egisters' })
+    set_keymap('n', '<leader>fb', builtin.buffers, { desc = '[b]uffers' })
   end,
 }
