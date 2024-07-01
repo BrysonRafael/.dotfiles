@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/themes/monokai_pro.toml"]
+import = ["~/.config/alacritty/themes/tokyo-night.toml"]
 
 live_config_reload = true
 
@@ -33,9 +33,6 @@ history = 5000
 
 [window]
 dynamic_padding = true
-
-[window.padding]
-x = 10
 
 [window.dimensions]
 columns = 120
