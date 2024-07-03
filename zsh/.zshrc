@@ -41,6 +41,7 @@ alias z="zellij"
 # PLANNING CENTER CONFIG
 eval "$($HOME/Code/pco/bin/pco init -)"
 source $HOME/pco-box/env.sh
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 
 # Cloud Box Config
 if [ -f /etc/os-release ]; then
