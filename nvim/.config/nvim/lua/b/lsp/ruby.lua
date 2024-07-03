@@ -142,7 +142,7 @@ if utils.installed_via_bundler 'syntax_tree' then
 end
 
 -- rubocop
-if not utils.ruby_lsp_setup() and utils.installed_via_bundler 'rubocop' and utils.config_exists '.rubocop.yml' and utils.rubocop_supports_lsp() then
+if utils.installed_via_bundler 'rubocop' and utils.config_exists '.rubocop.yml' and utils.rubocop_supports_lsp() then
   lspconfig.rubocop.setup {
     cmd = { 'bundle', 'exec', 'rubocop', '--lsp' },
     capabilities = capabilities,
