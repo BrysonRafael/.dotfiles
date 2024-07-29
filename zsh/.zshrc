@@ -41,7 +41,14 @@ alias z="zellij"
 # PLANNING CENTER CONFIG
 eval "$($HOME/Code/pco/bin/pco init -)"
 source $HOME/pco-box/env.sh
+
+# Church Center Android Config
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_AVD_HOME=$HOME/.android/avd
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 # Cloud Box Config
 if [ -f /etc/os-release ]; then
