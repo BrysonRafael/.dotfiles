@@ -18,6 +18,9 @@ export ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 
+# Env variables for neovim
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Aliases
 alias clobber="bundle exec rake assets:clobber"
 alias dot="cd ~/.dotfiles"
@@ -33,9 +36,10 @@ alias lg="lazygit"
 alias ls="ls -a --color=auto -FC"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias precompile="bundle exec rake --trace assets:precompile"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
+alias v="lv"
+alias vi="lv"
+alias vim="lv"
+alias lv="NVIM_APPNAME=nvim-lazyvim nvim"
 alias z="zellij"
 
 # PLANNING CENTER CONFIG
