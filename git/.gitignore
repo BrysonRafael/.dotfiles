@@ -32,3 +32,6 @@ log/*
 
 # Ctag Indexes
 tags
+
+# Yalc (local npm package development)
+.yalc/*
