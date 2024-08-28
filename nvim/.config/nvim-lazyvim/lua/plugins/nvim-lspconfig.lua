@@ -57,6 +57,17 @@ return {
       },
     })
 
+    opts.setup = {
+      on_attach = function(client, bufnr)
+        require("lazyvim.util").lsp.on_attach(client, bufnr)
+
+        if client.name == "ruby_lsp" or client.name == "solargraph" then
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end
+      end,
+    }
+
     return opts
   end,
 }
