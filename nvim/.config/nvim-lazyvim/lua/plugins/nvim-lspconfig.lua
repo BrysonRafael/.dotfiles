@@ -14,7 +14,7 @@ return {
       includeInlayVariableTypeHintsWhenTypeMatchesName = false,
     }
 
-    -- opts.inlay_hints.enabled = false
+    opts.inlay_hints.enabled = false
 
     opts.servers = vim.tbl_deep_extend("force", opts.servers, {
       ruby_lsp = {
@@ -51,9 +51,6 @@ return {
         --
         --     Cannot find provider for feature
         enabled = false,
-      },
-      eslint = {
-        enabled = true,
       },
     })
 
