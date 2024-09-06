@@ -12,7 +12,6 @@ map("n", "<C-j>", navigator.down, { noremap = true, silent = true })
 
 -- Which Key
 local wk = require("which-key")
-
 wk.add({
   { "<leader>r", desc = "runner" },
   { "<leader>t", desc = "test" },
