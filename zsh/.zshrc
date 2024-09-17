@@ -36,10 +36,9 @@ alias lg="lazygit"
 alias ls="ls -a --color=auto -FC"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias precompile="bundle exec rake --trace assets:precompile"
-alias v="lv"
-alias vi="lv"
-alias vim="lv"
-alias lv="NVIM_APPNAME=nvim-lazyvim nvim"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 alias z="zellij"
 
 # PLANNING CENTER CONFIG
