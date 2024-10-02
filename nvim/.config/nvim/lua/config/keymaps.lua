@@ -15,7 +15,7 @@ local wk = require("which-key")
 wk.add({
   { "<leader>r", desc = "runner" },
   { "<leader>t", desc = "test" },
-  { "<leader>y", desc = "copy to clipboard", mode = "v" },
+  { "<leader>y", desc = "yank to clipboard", mode = "v" },
 })
 
 -- Copy to clipboard
