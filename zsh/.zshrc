@@ -44,6 +44,7 @@ alias z="zellij"
 # PLANNING CENTER CONFIG
 eval "$($HOME/Code/pco/bin/pco init -)"
 source $HOME/pco-box/env.sh
+source ~/pco-box/bin/complete.bash
 
 # Church Center Android Config
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
