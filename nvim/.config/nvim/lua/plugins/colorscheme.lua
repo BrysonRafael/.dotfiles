@@ -1,15 +1,5 @@
 return {
   {
-    "projekt0n/github-nvim-theme",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "AlexvZyl/nordic.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
     "sainnhe/sonokai",
     lazy = false,
     priority = 1000,
@@ -19,19 +9,9 @@ return {
     end,
   },
   {
-    "Mofiqul/dracula.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "sonokai",
+      colorscheme = "catppuccin-mocha",
     },
   },
 }
