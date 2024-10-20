@@ -39,7 +39,6 @@ alias precompile="bundle exec rake --trace assets:precompile"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
-alias z="zellij"
 
 # PLANNING CENTER CONFIG
 eval "$($HOME/Code/pco/bin/pco init -)"
