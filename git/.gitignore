@@ -35,3 +35,6 @@ tags
 
 # Yalc (local npm package development)
 .yalc/*
+
+# Temp files
+tmp/*
