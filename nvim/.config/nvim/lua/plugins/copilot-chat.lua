@@ -1,6 +1,9 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
   opts = {
+    question_header = "🤔 Bryson ",
+    answer_header = "🤖 Copilot ",
+    error_header = "❌ Error ",
     window = {
       layout = "float",
       border = "rounded",
