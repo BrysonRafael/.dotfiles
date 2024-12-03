@@ -83,3 +83,5 @@ if which pyenv &> /dev/null; then
 fi
 
 eval "$(starship init zsh)"
+eval "$(rbenv init - zsh)"
+
