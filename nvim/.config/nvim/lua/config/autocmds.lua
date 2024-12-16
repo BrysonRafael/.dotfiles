@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
     if vim.bo.buftype == "nofile" then
       -- Stop LSP clients attached to the current buffer
-      local clients = vim.lsp.get_active_clients()
+      local clients = vim.lsp.get_clients()
       for _, client in ipairs(clients) do
         if client.attached_buffers[vim.api.nvim_get_current_buf()] then
           vim.lsp.stop_client(client.id)
