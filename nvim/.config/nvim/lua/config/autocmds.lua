@@ -33,9 +33,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
         end
       end
 
-      -- Disable autocomplete (assuming you use nvim-cmp)
-      require("cmp").setup.buffer({ enabled = false })
-
       -- Disable GitHub Copilot
       vim.b.copilot_enabled = false
     end
