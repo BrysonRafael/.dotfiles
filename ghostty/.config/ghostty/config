@@ -1,0 +1,15 @@
+auto-update = check
+adjust-cell-height = 4
+font-family = CaskaydiaCove Nerd Font
+font-size = 18
+theme = catppuccin-mocha
+clipboard-read = allow
+clipboard-write = allow
+cursor-style = block
+cursor-style-blink = true
+window-height = 50
+window-width = 150
+window-padding-balance = true
+
+keybind = alt+right=unbind
+keybind = alt+left=unbind
