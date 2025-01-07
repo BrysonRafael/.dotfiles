@@ -3,27 +3,15 @@ return {
   opts = function(_, opts)
     opts.diagnostics.underline = false
 
-    local inlay_hints_settings = {
-      includeInlayEnumMemberValueHints = true,
-      includeInlayFunctionLikeReturnTypeHints = true,
-      includeInlayFunctionParameterTypeHints = true,
-      includeInlayParameterNameHints = "literals",
-      includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-      includeInlayPropertyDeclarationTypeHints = true,
-      includeInlayVariableTypeHints = false,
-      includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-    }
-
     opts.inlay_hints.enabled = false
 
     opts.servers = vim.tbl_deep_extend("force", opts.servers, {
       ruby_lsp = {
         mason = false,
-        -- You need to install rubocop and ruby-lsp:
-        --
-        --     gem install ruby-lsp rubocop
-        --
-        --cmd_env = { BUNDLE_GEMFILE = ".ruby-lsp/Gemfile" },
+        cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
+        cmd_env = {
+          GEM_HOME = vim.env.RUBY_CONFDIR,
+        },
         init_options = {
           formatter = "rubocop",
           linters = { "rubocop" },
@@ -31,26 +19,9 @@ return {
       },
       syntax_tree = {
         mason = false,
-        -- You need to install syntax_tree
-        --
-        --     gem install syntax_tree
-        --
-      },
-      tsserver = {
-        settings = {
-          typescript = {
-            inlayHints = inlay_hints_settings,
-          },
-          javascript = {
-            inlayHints = inlay_hints_settings,
-          },
+        cmd_env = {
+          GEM_HOME = vim.env.RUBY_CONFDIR,
         },
-      },
-      vtsls = {
-        -- This is buggy on my machine. Keeps saying:
-        --
-        --     Cannot find provider for feature
-        enabled = false,
       },
     })
 
