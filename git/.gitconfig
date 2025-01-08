@@ -18,6 +18,9 @@
 	car = commit --amend --no-edit
 	unstage = reset
 	uncommit = reset --soft HEAD^
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 [color]
 	ui = true
 	diff = always
+[rebase]
+  autosquash = true
