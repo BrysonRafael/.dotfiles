@@ -1,7 +1,8 @@
 return {
   "vim-test/vim-test",
+  dependencies = { "preservim/vimux" },
   config = function()
-    vim.g["test#strategy"] = "vtr"
+    vim.g["test#strategy"] = "vimux"
   end,
   keys = {
     { "<leader>tf", ":TestFile <cr>", desc = "[f]ile" },
