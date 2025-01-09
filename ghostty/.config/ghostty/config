@@ -1,5 +1,5 @@
 auto-update = check
-adjust-cell-height = 4
+adjust-cell-height = 8
 font-family = CaskaydiaCove Nerd Font
 font-size = 18
 theme = catppuccin-mocha
