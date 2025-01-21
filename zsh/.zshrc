@@ -45,9 +45,19 @@ alias vi="nvim"
 alias vim="nvim"
 
 # PLANNING CENTER CONFIG
-eval "$($HOME/Code/pco/bin/pco init -)"
-source $HOME/pco-box/env.sh
-source ~/pco-box/bin/complete.bash
+if [[ -d $HOME/pco-box ]]; then
+  source $HOME/pco-box/env.sh
+  source ~/pco-box/bin/complete.bash
+fi
+
+if [[ -d $HOME/Code/pco ]]; then
+  eval "$($HOME/Code/pco/bin/pco init -)"
+fi
+
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 
 # Church Center Android Config
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
