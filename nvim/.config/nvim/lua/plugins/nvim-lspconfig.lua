@@ -8,7 +8,6 @@ return {
     opts.servers = vim.tbl_deep_extend("force", opts.servers, {
       ruby_lsp = {
         mason = false,
-        cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
         cmd_env = {
           GEM_HOME = vim.env.RUBY_CONFDIR,
         },
