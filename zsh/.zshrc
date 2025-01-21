@@ -57,26 +57,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
-# Cloud Box Config
-if [ -f /etc/os-release ]; then
-  source /etc/os-release
-  if [[ $ID == "ubuntu" ]]; then
-    export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
-    export MYSQL_READER_PORT_3306_TCP_ADDR=127.0.0.1
-    export MYSQL_READER_PORT_3306_TCP_PORT=3307
-    export PATH="$HOME/pco-box/bin:/usr/local/bin:$PATH"
-    source /home/ubuntu/pco-box/env.sh
-  fi
-fi
-
-
-# WezTerm
-if [ "$(uname)" = "Darwin" ]; then
-  PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-  export PATH
-fi
-
-
 # pyenv setup
 if which pyenv &> /dev/null; then
   export PYENV_ROOT="$HOME/.pyenv"
@@ -87,5 +67,3 @@ if which pyenv &> /dev/null; then
 fi
 
 eval "$(starship init zsh)"
-eval "$(rbenv init - zsh)"
-
