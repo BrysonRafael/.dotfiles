@@ -22,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
+alias be="bundle exec"
 alias clobber="bundle exec rake assets:clobber"
 alias dot="cd ~/.dotfiles"
 alias dot_alacritty="cd ~/.dotfiles/alacritty/.config/alacritty/"
