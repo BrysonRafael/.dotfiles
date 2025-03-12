@@ -46,7 +46,10 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
-
+unalias gsb 2>/dev/null
+gsb() {
+  git checkout $(git branch --sort=-committerdate | fzf)
+}
 
 # PLANNING CENTER CONFIG
 if [[ -d $HOME/pco-box ]]; then
