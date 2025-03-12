@@ -41,9 +41,12 @@ alias ls="ls -a --color=auto -FC"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias precompile="bundle exec rake --trace assets:precompile"
 alias rnf="bin/rspec --next-failure"
+alias tail="tail -f log/development.log"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+
+
 
 # PLANNING CENTER CONFIG
 if [[ -d $HOME/pco-box ]]; then
