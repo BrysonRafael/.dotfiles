@@ -45,6 +45,14 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+
+
+tail() {
+  if [ -f log/development.log ]; then
+    tail -f log/development.log
+  fi
+}
+
 # PLANNING CENTER CONFIG
 if [[ -d $HOME/pco-box ]]; then
   source $HOME/pco-box/env.sh
