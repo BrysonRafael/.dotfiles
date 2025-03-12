@@ -45,7 +45,10 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
-
+unalias gsb 2>/dev/null
+gsb() {
+  git checkout $(git branch --sort=-committerdate | fzf)
+}
 
 tail() {
   if [ -f log/development.log ]; then
