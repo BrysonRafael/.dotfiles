@@ -6,6 +6,11 @@ return {
     opts.inlay_hints.enabled = false
 
     opts.servers = vim.tbl_deep_extend("force", opts.servers, {
+      bashls = {
+        settings = {
+          filetypes = { "sh", "zsh" },
+        },
+      },
       ruby_lsp = {
         mason = false,
         cmd_env = {
