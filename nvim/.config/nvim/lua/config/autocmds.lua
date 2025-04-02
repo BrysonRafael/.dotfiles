@@ -19,3 +19,10 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
     vim.wo.relativenumber = true
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "Guardfile",
+  callback = function()
+    vim.bo.filetype = "ruby"
+  end,
+})
