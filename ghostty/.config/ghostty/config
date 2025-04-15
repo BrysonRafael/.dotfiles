@@ -1,6 +1,6 @@
 auto-update = check
 adjust-cell-height = 8
-font-family = CaskaydiaCove Nerd Font
+font-family = MartianMono Nerd Font
 font-size = 18
 theme = catppuccin-mocha
 clipboard-read = allow
