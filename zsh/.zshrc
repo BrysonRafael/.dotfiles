@@ -33,6 +33,7 @@ alias dot_nvim="cd ~/.dotfiles/nvim/.config/nvim/"
 alias dot_starship="cd ~/.dotfiles/starship/.config/"
 alias dot_tmux="cd ~/.dotfiles/tmux/"
 alias dot_wez="cd ~/.dotfiles/wezterm/.config/wezterm/"
+alias dot_yazi="cd ~/.dotfiles/yazi/.config/yazi/"
 alias dot_zsh="cd ~/.dotfiles/zsh/"
 alias dr="devbox run"
 alias ds="devbox shell"
@@ -46,10 +47,20 @@ alias tail="tail -f log/development.log"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias y="yazi"
 
 unalias gsb 2>/dev/null
 gsb() {
   git checkout $(git branch --sort=-committerdate | fzf)
+}
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 # PLANNING CENTER CONFIG

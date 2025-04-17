@@ -1,0 +1,5 @@
+[manager]
+show_symlink = true
+
+[preview]
+tab_size = 4
