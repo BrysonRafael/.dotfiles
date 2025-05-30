@@ -97,3 +97,4 @@ fi
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+alias claude="/Users/brysonrafael/.claude/local/claude"
