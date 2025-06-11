@@ -10,6 +10,7 @@ cursor-style-blink = true
 window-height = 50
 window-width = 150
 window-padding-balance = true
+window-padding-x = 16
 
 keybind = alt+right=unbind
 keybind = alt+left=unbind
