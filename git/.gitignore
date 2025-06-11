@@ -9,6 +9,8 @@ node_modules/*
 .fleet/*
 .idea/*
 .vscode/*
+.zed/*
+zed-devbox.sh
 
 # General
 log/*
@@ -38,3 +40,7 @@ tags
 
 # Temp files
 tmp/*
+
+# AI
+.claude/
+CLAUDE.md
