@@ -1,7 +1,7 @@
 auto-update = check
 adjust-cell-height = 12
 font-family = CaskaydiaCove Nerd Font
-font-size = 24
+font-size = 18
 theme = Kanagawa Wave
 clipboard-read = allow
 clipboard-write = allow
