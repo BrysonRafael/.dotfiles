@@ -1,14 +1,12 @@
 auto-update = check
 adjust-cell-height = 12
-font-family = CaskaydiaCove Nerd Font
-font-size = 18
-theme = Kanagawa Wave
+font-family = Iosevka Nerd Font
+font-size = 14
+theme = kanagawa-paper-canvas
 clipboard-read = allow
 clipboard-write = allow
 cursor-style = block
 cursor-style-blink = true
-window-height = 50
-window-width = 150
 window-padding-balance = true
 window-padding-x = 16
 
