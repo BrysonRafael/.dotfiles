@@ -24,7 +24,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Aliases
 alias be="bundle exec"
 alias clobber="bundle exec rake assets:clobber"
-alias claude="pco aws-login && /Users/brysonrafael/.claude/local/claude"
+alias claude="pco aws-login && ~/.claude/local/node_modules/.bin/claude"
 alias dot="cd ~/.dotfiles"
 alias dot_alacritty="cd ~/.dotfiles/alacritty/.config/alacritty/"
 alias dot_ghostty="cd ~/.dotfiles/ghostty/.config/ghostty/"
