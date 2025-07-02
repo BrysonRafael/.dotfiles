@@ -1,8 +1,8 @@
 auto-update = check
 adjust-cell-height = 12
-font-family = Iosevka Nerd Font
+font-family = ZedMono Nerd Font
 font-size = 14
-theme = kanagawa-paper-canvas
+theme = seoulbones_light
 clipboard-read = allow
 clipboard-write = allow
 cursor-style = block
