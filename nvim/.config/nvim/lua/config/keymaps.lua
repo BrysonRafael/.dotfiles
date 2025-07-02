@@ -2,9 +2,13 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+local map = vim.keymap.set
+
+-- Copy to clipboard
+map("v", "<leader>y", '"+y', { noremap = true, silent = true })
+
 -- Navigator
 local navigator = require("Navigator")
-local map = vim.keymap.set
 map("n", "<C-h>", navigator.left, { noremap = true, silent = true })
 map("n", "<C-l>", navigator.right, { noremap = true, silent = true })
 map("n", "<C-k>", navigator.up, { noremap = true, silent = true })
@@ -16,6 +20,3 @@ wk.add({
   { "<leader>t", desc = "test" },
   { "<leader>y", desc = "yank to clipboard", mode = "v" },
 })
-
--- Copy to clipboard
-map("v", "<leader>y", '"+y', { noremap = true, silent = true })
