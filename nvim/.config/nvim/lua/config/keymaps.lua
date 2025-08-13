@@ -7,6 +7,15 @@ local map = vim.keymap.set
 -- Copy to clipboard
 map("v", "<leader>y", '"+y', { noremap = true, silent = true })
 
+-- Save with Ctrl+s
+map({ "n" }, "<C-s>", "<cmd>w<CR>", { noremap = true, silent = true, desc = "Save file" })
+
+-- Quit with Ctrl+q
+map({ "n" }, "<C-q>", "<cmd>q<CR>", { noremap = true, silent = true, desc = "Quit" })
+
+-- Close buffer with Ctrl+x
+map({ "n" }, "<C-x>", "<cmd>bd<CR>", { noremap = true, silent = true, desc = "Close buffer" })
+
 -- Navigator
 local navigator = require("Navigator")
 map("n", "<C-h>", navigator.left, { noremap = true, silent = true })
