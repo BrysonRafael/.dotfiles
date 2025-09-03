@@ -1,8 +1,6 @@
 # Node
 npm-debug.log
 node_modules/*
-
-# Mac
 .DS_Store
 
 # Editor configs
@@ -40,7 +38,3 @@ tags
 
 # Temp files
 tmp/*
-
-# AI
-.claude/
-CLAUDE.md
