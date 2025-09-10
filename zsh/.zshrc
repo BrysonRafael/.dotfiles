@@ -96,6 +96,7 @@ if which pyenv &> /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+eval "$(devbox global shellenv)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
