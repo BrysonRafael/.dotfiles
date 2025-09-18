@@ -1,6 +1,6 @@
 auto-update = check
 adjust-cell-height = 12
-font-family = JetbrainsMono Nerd Font
+font-family = ZedMono Nerd Font
 font-size = 16
 theme = Seoulbones Light
 clipboard-read = allow
