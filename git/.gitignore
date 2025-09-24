@@ -24,8 +24,8 @@ log/*
 .nvmrc
 
 # XCode
-/ios/*
-/android/*
+ios/*
+android/*
 
 # Alacritty themes
 ~/.dotfiles/alacritty/.config/alacritty/themes/*
@@ -38,3 +38,6 @@ tags
 
 # Temp files
 tmp/*
+
+# Claude
+.claude/*
