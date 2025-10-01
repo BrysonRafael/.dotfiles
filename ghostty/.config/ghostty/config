@@ -12,3 +12,4 @@ window-padding-x = 16
 
 keybind = alt+right=unbind
 keybind = alt+left=unbind
+keybind = shift+enter=text:\x1b\r
