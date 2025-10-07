@@ -23,6 +23,12 @@ map("n", "<C-l>", navigator.right, { noremap = true, silent = true })
 map("n", "<C-k>", navigator.up, { noremap = true, silent = true })
 map("n", "<C-j>", navigator.down, { noremap = true, silent = true })
 
+-- Diffview
+map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { noremap = true, silent = true, desc = "Git diff" })
+map("n", "<leader>gh", "<cmd>DiffviewFileHistory<CR>", { noremap = true, silent = true, desc = "Git history" })
+map("n", "<leader>gc", "<cmd>DiffviewClose<CR>", { noremap = true, silent = true, desc = "Close diffview" })
+map("n", "<leader>gf", "<cmd>DiffviewToggleFiles<CR>", { noremap = true, silent = true, desc = "Toggle file panel" })
+
 -- Which Key
 local wk = require("which-key")
 wk.add({
