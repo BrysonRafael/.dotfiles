@@ -23,7 +23,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
 alias be="bundle exec"
-alias claude="pco aws-login && ~/.claude/local/claude"
 alias clobber="bundle exec rake assets:clobber"
 alias dot="cd ~/.dotfiles"
 alias dot_alacritty="cd ~/.dotfiles/alacritty/.config/alacritty/"
@@ -100,3 +99,4 @@ eval "$(devbox global shellenv)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+export PATH="$HOME/.local/bin:$PATH"
