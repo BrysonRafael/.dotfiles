@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# Track config
+!.gitignore
+!CLAUDE.md
+!settings.json
+!hooks/
+!hooks/**

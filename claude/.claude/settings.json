@@ -1,0 +1,53 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git show:*)",
+      "Bash(ls:*)",
+      "Bash(nvim:*)",
+      "Bash(grep:*)",
+      "Bash(gem list:*)",
+      "Bash(bundle info:*)",
+      "Read(//Users/brysonrafael/Code/**)",
+      "WebFetch(domain:github.com)"
+    ]
+  },
+  "model": "opus[1m]",
+  "enabledPlugins": {
+    "coding-standards@planning-center": true,
+    "redshift-mcp@planning-center": true,
+    "slack@claude-plugins-official": true,
+    "asana@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "ux-engineer@planning-center": true,
+    "tapestry@planning-center": true,
+    "propose-pr@planning-center": true,
+    "bugsnag-triage@planning-center-dev": true,
+    "Notion@claude-plugins-official": true,
+    "chrome-devtools-mcp@chrome-devtools-plugins": true,
+    "pr@planning-center": true,
+    "lua-lsp@claude-plugins-official": true,
+    "ruby-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/devbox-enforce.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
