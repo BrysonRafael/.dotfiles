@@ -12,31 +12,6 @@
     ]
   },
   "model": "opus[1m]",
-  "enabledPlugins": {
-    "coding-standards@planning-center": true,
-    "redshift-mcp@planning-center": true,
-    "slack@claude-plugins-official": true,
-    "asana@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "ux-engineer@planning-center": true,
-    "tapestry@planning-center": true,
-    "propose-pr@planning-center": true,
-    "bugsnag-triage@planning-center-dev": true,
-    "Notion@claude-plugins-official": true,
-    "chrome-devtools-mcp@chrome-devtools-plugins": true,
-    "pr@planning-center": true,
-    "lua-lsp@claude-plugins-official": true,
-    "ruby-lsp@claude-plugins-official": true
-  },
-  "extraKnownMarketplaces": {
-    "chrome-devtools-plugins": {
-      "source": {
-        "source": "github",
-        "repo": "ChromeDevTools/chrome-devtools-mcp"
-      }
-    }
-  },
-  "alwaysThinkingEnabled": true,
   "hooks": {
     "PreToolUse": [
       {
@@ -49,5 +24,37 @@
         ]
       }
     ]
-  }
+  },
+  "enabledPlugins": {
+    "coding-standards@planning-center": true,
+    "redshift-mcp@planning-center": true,
+    "slack@claude-plugins-official": true,
+    "asana@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "tapestry@planning-center": true,
+    "chrome-devtools-mcp@chrome-devtools-plugins": true,
+    "pr@planning-center": true,
+    "lua-lsp@claude-plugins-official": true,
+    "ruby-lsp@claude-plugins-official": true,
+    "chrome-devtools-mcp@claude-plugins-official": true,
+    "notion@claude-plugins-official": true,
+    "adversarial-review@planning-center": true,
+    "asana-html-formatting@planning-center": true,
+    "bugsnag@planning-center": true,
+    "bugsnag-triage@planning-center": true,
+    "claude-md-toolkit@planning-center": true,
+    "datadog@planning-center": true,
+    "flipper@planning-center": true,
+    "pco-box@planning-center": true
+  },
+  "extraKnownMarketplaces": {
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high"
 }

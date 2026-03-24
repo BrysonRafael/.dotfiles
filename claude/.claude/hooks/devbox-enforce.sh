@@ -10,8 +10,9 @@ COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command')
 # Only enforce in projects with devbox.json
 [[ -f "$CWD/devbox.json" ]] || exit 0
 
-# Already using devbox
+# Already using devbox or direnv
 [[ "$COMMAND" != devbox* ]] || exit 0
+[[ "$COMMAND" != direnv\ exec* ]] || exit 0
 
 # Strip leading env var assignments, get first command basename
 first_cmd=$(echo "$COMMAND" | sed -E 's/^([A-Za-z_][A-Za-z_0-9]*=[^ ]* )*//;s/ .*//')
@@ -40,7 +41,7 @@ devbox_commands=(
 for cmd in "${devbox_commands[@]}"; do
   if [[ "$first_cmd" == "$cmd" ]]; then
     cat <<'EOF'
-{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"devbox.json detected — prefix this command with `devbox run --pure`."}}
+{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"devbox.json detected — prefix this command with `direnv exec .`."}}
 EOF
     exit 0
   fi

@@ -2,8 +2,15 @@
 
 ## Devbox + direnv
 
-Projects under `~/Code` that use devbox (i.e. have a `devbox.json`) also use direnv via an `.envrc` file. When running shell commands in these projects, always prefix with `direnv exec .` instead of `devbox run` to get the correct environment. `devbox run` resolves to the global devbox config and uses the wrong tool versions (e.g., system Ruby 2.6 instead of the project's Ruby 3.3).
+Projects under `~/Code` that use devbox (i.e. have a `devbox.json`) also use direnv via an `.envrc` file. When running shell commands in these projects, prefix with `direnv exec .` to get the correct environment.
 
 Example:
-- Instead of: `devbox run bundle exec rubocop ...`
+- Instead of: `bundle exec rubocop ...`
 - Use: `direnv exec . bundle exec rubocop ...`
+
+## Git Worktrees
+
+When creating git worktrees in projects that use devbox, always use the `new_worktree` shell function instead of `git worktree add`. `new_worktree` runs `bundle install` via `direnv exec` immediately after creating the worktree, ensuring gems are compiled against the correct Ruby version.
+
+- Instead of: `git worktree add <path> <branch>`
+- Use: `new_worktree <path> <branch>`
