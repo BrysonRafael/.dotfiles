@@ -56,6 +56,22 @@ gsb() {
   git checkout $(git branch --sort=-committerdate | fzf)
 }
 
+# Creates a git worktree and runs bundle install with the correct devbox environment
+new_worktree() {
+  local wt_path="${1}"
+  git worktree add "$@" || return 1
+  direnv allow "${wt_path}/.envrc"
+  direnv exec "${wt_path}" bundle install
+}
+
+# Fixes gems in an existing worktree that has native extension errors
+fix_worktree_gems() {
+  local wt_path="${1:-.}"
+  [[ -f "${wt_path}/devbox.json" ]] || { echo "No devbox.json at ${wt_path}" >&2; return 1; }
+  direnv allow "${wt_path}/.envrc"
+  direnv exec "${wt_path}" bundle pristine
+}
+
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
