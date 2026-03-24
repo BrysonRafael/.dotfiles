@@ -14,3 +14,13 @@ When creating git worktrees in projects that use devbox, always use the `new_wor
 
 - Instead of: `git worktree add <path> <branch>`
 - Use: `new_worktree <path> <branch>`
+
+## Commit Style
+
+Use conventional commits format: `type(scope): Subject`
+
+- **Types**: `feat`, `fix`, `chore`, `refactor`, `style`, `test`, `docs`
+- **Scope**: class name, module, or area (e.g., `ConversationVertex`, `staff-tools`, `deps`, `lint`)
+- **Subject line**: imperative mood, capitalize first word after colon, no trailing period
+- **Body**: optional — include on non-trivial changes to explain "why" in paragraph form, wrapped at ~72 characters
+- **Trivial changes**: keep terse (e.g., `chore(lint): Rubocop`)
