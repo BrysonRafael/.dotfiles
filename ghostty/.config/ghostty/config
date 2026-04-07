@@ -1,5 +1,4 @@
 auto-update = check
-adjust-cell-height = 12
 font-family = ZedMono Nerd Font
 font-size = 18
 theme = Apple System Colors Light
@@ -7,8 +6,8 @@ clipboard-read = allow
 clipboard-write = allow
 cursor-style = block
 cursor-style-blink = true
-window-padding-balance = true
 window-padding-x = 16
+scroll-to-bottom = no-keystroke, no-output
 
 keybind = alt+right=unbind
 keybind = alt+left=unbind
