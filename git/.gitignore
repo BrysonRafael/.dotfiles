@@ -40,4 +40,6 @@ tags
 tmp/*
 
 # Claude
-.claude/*
+.claude/settings.local.json
+.claude/tmp/
+.claude/worktrees/
