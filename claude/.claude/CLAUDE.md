@@ -15,6 +15,10 @@ When creating git worktrees in projects that use devbox, always use the `new_wor
 - Instead of: `git worktree add <path> <branch>`
 - Use: `new_worktree <path> <branch>`
 
+## Linting
+
+When running `rubotree`, `rubocop`, or `stree`, only target files with unstaged changes — never run them against the entire project. Use `git diff --name-only` to get the file list.
+
 ## Commit Style
 
 Use conventional commits format: `type(scope): Subject`
