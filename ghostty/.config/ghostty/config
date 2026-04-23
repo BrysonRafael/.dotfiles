@@ -7,7 +7,6 @@ clipboard-write = allow
 cursor-style = block
 cursor-style-blink = true
 window-padding-x = 16
-scroll-to-bottom = no-keystroke, no-output
 
 keybind = alt+right=unbind
 keybind = alt+left=unbind
