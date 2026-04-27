@@ -19,6 +19,10 @@ When creating git worktrees in projects that use devbox, always use the `new_wor
 
 When running `rubotree`, `rubocop`, or `stree`, only target files with unstaged changes — never run them against the entire project. Use `git diff --name-only` to get the file list.
 
+## Commits
+
+Only create commits when explicitly asked. Never commit proactively after making changes.
+
 ## Commit Style
 
 Use conventional commits format: `type(scope): Subject`
