@@ -24,6 +24,5 @@
 	dshow = -c diff.external=difft show --ext-diff
 [color]
 	ui = true
-	diff = always
 [rebase]
   autosquash = true
