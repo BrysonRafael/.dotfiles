@@ -51,6 +51,10 @@ alias vi="nvim"
 alias vim="nvim"
 alias y="yazi"
 
+rg() {
+  command rg --json "$@" | delta
+}
+
 unalias gsb 2>/dev/null
 gsb() {
   git checkout $(git branch --sort=-committerdate | fzf)
