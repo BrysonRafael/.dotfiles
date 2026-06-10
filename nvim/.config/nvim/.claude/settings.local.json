@@ -12,7 +12,20 @@
       "Read(//Users/brysonrafael/.dotfiles/claude/.claude/**)",
       "Bash(claude plugin *)",
       "Bash(node -e \"const fs=require\\('fs'\\);const p=require.resolve\\('@anthropic-ai/claude-code/cli.js'\\);const s=fs.readFileSync\\(p,'utf8'\\);const m=s.match\\(/\\(preferredNotif\\\\w*|notif\\\\w*Channel|notifications_disabled|terminal_bell|CLAUDE_CODE_NOTIF\\\\w*\\)/g\\);console.log\\([...new Set\\(m||[]\\)].slice\\(0,40\\)\\)\")",
-      "Read(//Users/brysonrafael/.local/share/claude/versions/**)"
+      "Read(//Users/brysonrafael/.local/share/claude/versions/**)",
+      "Bash(ruby -v)",
+      "Bash(ruby-lsp --version)",
+      "Read(//nix/store/vlyfci4cm8m95d3d00j36gsy8iqv1jw6-profile/bin/**)",
+      "Bash(/Users/brysonrafael/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/ruby -v)",
+      "Bash(npx -y ccusage@latest monthly --json)",
+      "Bash(rm -f /tmp/claude-monthly-cost-*)",
+      "Bash(rmdir /tmp/claude-monthly-cost.lock)",
+      "WebFetch(domain:news.ycombinator.com)",
+      "Bash(brew list *)",
+      "Bash(delta --list-syntax-themes)",
+      "Bash(stow --simulate lazygit)",
+      "Bash(stow --simulate -v lazygit)",
+      "Bash(brew uninstall *)"
     ]
   }
 }

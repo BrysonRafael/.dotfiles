@@ -43,3 +43,5 @@ tmp/*
 .claude/settings.local.json
 .claude/tmp/
 .claude/worktrees/
+
+**/.claude/settings.local.json
