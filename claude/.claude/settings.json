@@ -62,7 +62,6 @@
     ],
     "disableBypassPermissionsMode": "disable"
   },
-  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -81,23 +80,8 @@
     "command": "bash $HOME/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "coding-standards@planning-center": true,
-    "redshift-mcp@planning-center": true,
-    "slack@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "tapestry@planning-center": true,
     "pr@planning-center": true,
-    "lua-lsp@claude-plugins-official": true,
-    "ruby-lsp@claude-plugins-official": true,
-    "chrome-devtools-mcp@claude-plugins-official": true,
-    "notion@claude-plugins-official": true,
-    "adversarial-review@planning-center": true,
-    "asana-html-formatting@planning-center": true,
-    "claude-md-toolkit@planning-center": true,
-    "datadog@planning-center": true,
-    "pco-box@planning-center": true,
-    "figma@claude-plugins-official": true,
-    "bugsnag@planning-center": true
+    "redshift-mcp@planning-center": true
   },
   "extraKnownMarketplaces": {
     "chrome-devtools-plugins": {
