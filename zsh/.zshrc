@@ -55,6 +55,16 @@ rg() {
   command rg --json "$@" | delta
 }
 
+delta-toggle() {
+  if [[ "$DELTA_FEATURES" == *"side-by-side"* ]]; then
+    export DELTA_FEATURES=""
+    echo "delta: side-by-side off"
+  else
+    export DELTA_FEATURES="+side-by-side"
+    echo "delta: side-by-side on"
+  fi
+}
+
 unalias gsb 2>/dev/null
 gsb() {
   git checkout $(git branch --sort=-committerdate | fzf)
