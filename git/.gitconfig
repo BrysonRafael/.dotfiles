@@ -19,9 +19,18 @@
 	unstage = reset
 	uncommit = reset --soft HEAD^
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
-	dft = -c diff.external=difft diff
-	dlog = -c diff.external=difft log -p --ext-diff
-	dshow = -c diff.external=difft show --ext-diff
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = GitHub
+	light = true
+	hyperlinks = true
+[merge]
+	conflictstyle = zdiff3
 [color]
 	ui = true
 [rebase]
