@@ -81,7 +81,8 @@
   },
   "enabledPlugins": {
     "pr@planning-center": true,
-    "redshift-mcp@planning-center": true
+    "redshift-mcp@planning-center": true,
+    "sentry@planning-center": true
   },
   "extraKnownMarketplaces": {
     "chrome-devtools-plugins": {

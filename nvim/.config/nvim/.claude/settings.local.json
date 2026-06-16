@@ -25,7 +25,14 @@
       "Bash(delta --list-syntax-themes)",
       "Bash(stow --simulate lazygit)",
       "Bash(stow --simulate -v lazygit)",
-      "Bash(brew uninstall *)"
+      "Bash(brew uninstall *)",
+      "Bash(delta --paging=never --features lazygit --show-config)",
+      "Bash(delta --help)",
+      "WebFetch(domain:dandavison.github.io)",
+      "Bash(lazygit --help)",
+      "Bash(delta --show-config)",
+      "Read(//Users/brysonrafael/.config/zed/**)",
+      "Bash(git *)"
     ]
   }
 }
