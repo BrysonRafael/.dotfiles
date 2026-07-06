@@ -94,6 +94,6 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
-  "theme": "light",
+  "theme": "auto",
   "preferredNotifChannel": "ghostty"
 }
