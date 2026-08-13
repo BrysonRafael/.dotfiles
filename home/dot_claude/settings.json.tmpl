@@ -7,7 +7,7 @@
       "Bash(grep:*)",
       "Bash(gem list:*)",
       "Bash(bundle info:*)",
-      "Read(//Users/brysonrafael/Code/**)",
+      "Read(/{{ .chezmoi.homeDir }}/Code/**)",
       "WebFetch(domain:github.com)"
     ],
     "deny": [
@@ -81,7 +81,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/brysonrafael/.claude/hooks/herdr-agent-state.sh' session",
+            "command": "bash '{{ .chezmoi.homeDir }}/.claude/hooks/herdr-agent-state.sh' session",
             "timeout": 10
           }
         ]
