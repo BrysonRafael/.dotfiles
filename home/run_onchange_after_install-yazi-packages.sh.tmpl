@@ -1,0 +1,21 @@
+#!/bin/sh
+# Installs yazi packages (flavors/plugins) pinned in ~/.config/yazi/package.toml.
+#
+# The catppuccin-mocha flavor used to be vendored into this repo (746 KB, mostly
+# a 676 KB preview.png). It's pinned by rev + hash in package.toml, so `ya pack`
+# can restore it reproducibly instead.
+#
+# The hash below makes chezmoi re-run this script whenever package.toml changes:
+# package.toml hash: {{ include "dot_config/yazi/package.toml" | sha256sum }}
+
+set -eu
+
+command -v ya >/dev/null 2>&1 || exit 0
+
+# `ya pack` was deprecated in favour of `ya pkg` (yazi#2770); prefer the new
+# subcommand, falling back for older yazi builds.
+if ya pkg --help >/dev/null 2>&1; then
+  ya pkg install
+else
+  ya pack -i
+fi

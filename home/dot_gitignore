@@ -17,18 +17,9 @@ log/*
 # Prettier Ignore
 .prettierignore
 
-# RVM
-.ruby-gemset
-
-# NVM
-.nvmrc
-
 # XCode
 ios/*
 android/*
-
-# Alacritty themes
-~/.dotfiles/alacritty/.config/alacritty/themes/*
 
 # Ctag Indexes
 tags
