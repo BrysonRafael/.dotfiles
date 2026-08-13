@@ -32,7 +32,10 @@
       "Bash(lazygit --help)",
       "Bash(delta --show-config)",
       "Read(//Users/brysonrafael/.config/zed/**)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Read(//Users/brysonrafael/.dotfiles/**)",
+      "Read(//Users/brysonrafael/**)",
+      "Bash(bat --list-themes)"
     ]
   }
 }
