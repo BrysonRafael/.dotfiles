@@ -82,18 +82,21 @@ new_worktree() {
 # Fixes gems in an existing worktree that has native extension errors
 fix_worktree_gems() {
   local wt_path="${1:-.}"
-  [[ -f "${wt_path}/devbox.json" ]] || { echo "No devbox.json at ${wt_path}" >&2; return 1; }
+  [[ -f "${wt_path}/devbox.json" ]] || {
+    echo "No devbox.json at ${wt_path}" >&2
+    return 1
+  }
   direnv allow "${wt_path}/.envrc"
   direnv exec "${wt_path}" bundle pristine
 }
 
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # PLANNING CENTER CONFIG
@@ -106,10 +109,9 @@ if [[ -d $HOME/Code/pco ]]; then
   eval "$($HOME/Code/pco/bin/pco init -)"
 fi
 
-if command -v direnv &> /dev/null; then
+if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
-
 
 # Church Center Android Config
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
@@ -120,7 +122,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 # pyenv setup
-if which pyenv &> /dev/null; then
+if which pyenv &>/dev/null; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
   export PATH="$PYENV_ROOT/shims:$PATH"
