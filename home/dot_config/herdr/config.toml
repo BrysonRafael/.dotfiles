@@ -92,25 +92,25 @@ description = "Move right, or forward C-l to vim/lazygit"
 [[keys.command]]
 key = "alt+left"
 type = "shell"
-command = "herdr pane resize --direction left --amount 2"
+command = "herdr pane resize --direction left --amount 0.03"
 description = "Resize pane left"
 
 [[keys.command]]
 key = "alt+right"
 type = "shell"
-command = "herdr pane resize --direction right --amount 2"
+command = "herdr pane resize --direction right --amount 0.03"
 description = "Resize pane right"
 
 [[keys.command]]
 key = "alt+down"
 type = "shell"
-command = "herdr pane resize --direction down --amount 2"
+command = "herdr pane resize --direction down --amount 0.03"
 description = "Resize pane down"
 
 [[keys.command]]
 key = "alt+up"
 type = "shell"
-command = "herdr pane resize --direction up --amount 2"
+command = "herdr pane resize --direction up --amount 0.03"
 description = "Resize pane up"
 
 [ui]
