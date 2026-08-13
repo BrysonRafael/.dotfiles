@@ -1,0 +1,37 @@
+#!/bin/sh
+# herdr-nav DIRECTION KEY
+#
+# Replicates tmux's `is_vim_or_lazygit` check from tmux/.tmux.conf: if the
+# focused pane's foreground process is vim/neovim/view(diff) or lazygit,
+# forward the raw key to it; otherwise move herdr's pane focus.
+#
+# tmux used:
+#   ps -o state= -o comm= -t '#{pane_tty}' \
+#     | grep -iqE '^[^TXZ ]+ +(\S+\/)?(g?(view|n?vim?x?)(diff)?|lazygit)$'
+#
+# Herdr has no if-shell, so this script is bound directly to ctrl+h/j/k/l
+# via [[keys.command]] in config.toml.
+
+set -eu
+
+# `type = "shell"` commands may run with a minimal PATH that doesn't include
+# where herdr/jq live (e.g. ~/.local/bin via install script, jq via Homebrew).
+PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
+
+direction="$1"
+key="$2"
+
+info=$(herdr pane process-info --current)
+pane_id=$(printf '%s' "$info" | jq -r '.result.process_info.pane_id')
+names=$(printf '%s' "$info" \
+  | jq -r '.result.process_info.foreground_processes[].name' \
+  | tr '[:upper:]' '[:lower:]')
+
+case "$names" in
+  *nvim*|*vim*|*view*|*lazygit*)
+    herdr pane send-keys "$pane_id" "$key"
+    ;;
+  *)
+    herdr pane focus --direction "$direction"
+    ;;
+esac

@@ -1,0 +1,129 @@
+# Herdr config — ported from tmux/.tmux.conf
+# https://herdr.dev/docs/
+#
+# tmux is left untouched (tmux/.tmux.conf) so this can be dropped without
+# losing the old setup. Run `herdr server reload-config` after editing.
+
+onboarding = false
+
+[terminal]
+# tmux: open panes in the current pane's cwd (-c "#{pane_current_path}")
+new_cwd = "follow"
+
+[session]
+# tmux-resurrect equivalent
+resume_agents_on_restore = true
+
+[keys]
+# tmux: set -g prefix C-Space ; bind C-Space send-prefix
+prefix = "ctrl+space"
+
+# tmux: bind s source-file ~/.tmux.conf \; display-message "Config reloaded..."
+reload_config = "prefix+s"
+# reload_config now owns prefix+s, so move the default settings binding aside
+settings = "prefix+shift+s"
+
+# tmux: bind h split-window -v -c "#{pane_current_path}"  (split below)
+split_horizontal = "prefix+h"
+# tmux: bind v split-window -h -c "#{pane_current_path}"  (split right)
+split_vertical = "prefix+v"
+# tmux: bind c new-window -c "#{pane_current_path}"
+new_tab = "prefix+c"
+
+# Herdr has no tmux-style repeat-time window, so rapid double-taps of
+# prefix+n/p can race the prefix chord itself. ctrl+alt+n/p bypass the
+# prefix entirely for fast repeated tab cycling; prefix+n/p still work too.
+previous_tab = ["prefix+p", "ctrl+alt+p"]
+next_tab = ["prefix+n", "ctrl+alt+n"]
+
+# tmux: bind b set-option status  (toggle status bar)
+toggle_sidebar = "prefix+b"
+
+# Workspace picker: prefix+space opens it; j/k move through the list;
+# enter selects and esc cancels (built in, not configurable here).
+workspace_picker = "prefix+space"
+navigate_workspace_up = "k"
+navigate_workspace_down = "j"
+# Free up j/k for workspace movement above; these default to a pane-preview
+# nav inside the same picker, which would otherwise conflict with j/k.
+navigate_pane_up = ""
+navigate_pane_down = ""
+
+# tmux: set-window-option mode-keys vi (copy mode)
+copy_mode = "prefix+["
+
+# tmux: bind-key -n C-\ if-shell "$is_vim" 'send-keys C-\\' 'select-pane -l'
+last_pane = "ctrl+\\"
+
+# C-h/j/k/l pane navigation is handled by the herdr-nav script below instead
+# (tmux used `if-shell "$is_vim_or_lazygit"`; herdr has no if-shell equivalent).
+# The focus_pane_* defaults are cleared so prefix+h stays split_horizontal above.
+focus_pane_left = ""
+focus_pane_down = ""
+focus_pane_up = ""
+focus_pane_right = ""
+
+# tmux: bind-key -n C-h/j/k/l if-shell "$is_vim_or_lazygit" "send-keys C-h/j/k/l" "select-pane -L/-D/-U/-R"
+[[keys.command]]
+key = "ctrl+h"
+type = "shell"
+command = "$HOME/.config/herdr/bin/herdr-nav left ctrl+h"
+description = "Move left, or forward C-h to vim/lazygit"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "shell"
+command = "$HOME/.config/herdr/bin/herdr-nav down ctrl+j"
+description = "Move down, or forward C-j to vim/lazygit"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "shell"
+command = "$HOME/.config/herdr/bin/herdr-nav up ctrl+k"
+description = "Move up, or forward C-k to vim/lazygit"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "shell"
+command = "$HOME/.config/herdr/bin/herdr-nav right ctrl+l"
+description = "Move right, or forward C-l to vim/lazygit"
+
+# tmux: bind -n M-Left/Right/Down/Up resize-pane -L/-R/-D/-U 2
+[[keys.command]]
+key = "alt+left"
+type = "shell"
+command = "herdr pane resize --direction left --amount 2"
+description = "Resize pane left"
+
+[[keys.command]]
+key = "alt+right"
+type = "shell"
+command = "herdr pane resize --direction right --amount 2"
+description = "Resize pane right"
+
+[[keys.command]]
+key = "alt+down"
+type = "shell"
+command = "herdr pane resize --direction down --amount 2"
+description = "Resize pane down"
+
+[[keys.command]]
+key = "alt+up"
+type = "shell"
+command = "herdr pane resize --direction up --amount 2"
+description = "Resize pane up"
+
+[ui]
+# tmux: set -g status-position top
+tab_bar_position = "top"
+
+[theme]
+# Base palette closest to Catppuccin Frappe; overridden below to match exactly.
+name = "catppuccin"
+auto_switch = false
+
+# tmux: status-style bg="#292c3c" fg="#c6d0f5" ; window-status-current-style bg="#8caaee"
+[theme.custom]
+panel_bg = "#292c3c"
+text = "#c6d0f5"
+accent = "#8caaee"
