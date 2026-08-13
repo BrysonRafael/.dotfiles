@@ -1,12 +1,10 @@
 auto-update = check
-font-family = ZedMono Nerd Font
 font-size = 20
-theme = Apple System Colors Light
+theme = Catppuccin Frappe
 clipboard-read = allow
 clipboard-write = allow
 cursor-style = block
 cursor-style-blink = true
-window-padding-x = 16
 
 keybind = alt+right=unbind
 keybind = alt+left=unbind

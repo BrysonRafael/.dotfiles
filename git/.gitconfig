@@ -26,8 +26,8 @@
 [delta]
 	navigate = true
 	line-numbers = true
-	syntax-theme = GitHub
-	light = true
+	syntax-theme = Catppuccin Frappe
+	light = false
 	hyperlinks = true
 [merge]
 	conflictstyle = zdiff3
