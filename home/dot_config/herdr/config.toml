@@ -39,6 +39,10 @@ next_tab = ["prefix+n", "ctrl+alt+n"]
 # tmux: bind b set-option status  (toggle status bar)
 toggle_sidebar = "prefix+b"
 
+# Cycle focus through agent panes
+next_agent = "prefix+j"
+previous_agent = "prefix+k"
+
 # Workspace picker: prefix+space opens it; j/k move through the list;
 # enter selects and esc cancels (built in, not configurable here).
 workspace_picker = "prefix+space"
