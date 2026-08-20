@@ -1,11 +1,7 @@
-tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
-tap "homebrew/services"
-tap "jesseduffield/lazygit"
-tap "nikitabobko/tap"
-tap "ybeapps/sourcegit"
-
-# General-purpose data compression with high compression ratio
-brew "xz"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
+tap "jesseduffield/lazygit", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "ybeapps/sourcegit", trusted: true
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Download with resuming and segmented downloading
@@ -16,6 +12,8 @@ brew "ast-grep"
 brew "automake"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Core application library for C
 brew "glib"
 # Vector graphics library with cross-device output support
@@ -54,10 +52,6 @@ brew "edencommon"
 brew "elixir"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # High quality MPEG Audio Layer III (MP3) encoder
 brew "lame"
 # Play, record, convert, and stream select audio and video codecs
@@ -80,6 +74,8 @@ brew "git-delta"
 brew "git-lfs"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
 # Assuan IPC Library
 brew "libassuan"
 # Passphrase entry dialog utilizing the Assuan protocol
@@ -88,10 +84,10 @@ brew "pinentry"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Apache HTTP server
 brew "httpd"
-# Database of common MIME types
-brew "shared-mime-info"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
@@ -114,8 +110,6 @@ brew "luajit-openresty"
 brew "luarocks"
 # QUIC transport protocol implementation
 brew "mvfst"
-# General-purpose lossless data-compression library
-brew "zlib"
 # Open source relational database management system
 brew "mysql-client@8.0", link: true
 # Ambitious Vim-fork focused on extensibility and agility
@@ -123,7 +117,7 @@ brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
+brew "openssl@3.5"
 # Perl compatible regular expressions library
 brew "pcre"
 # General-purpose scripting language
@@ -148,6 +142,8 @@ brew "ripgrep"
 brew "ruby-build"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Database of common MIME types
+brew "shared-mime-info"
 # SOund eXchange: universal sound sample translator
 brew "sox"
 # Cross-shell prompt for astronauts
@@ -162,6 +158,8 @@ brew "typescript"
 brew "typescript-language-server"
 # Minimal zsh prompt
 brew "typewritten"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Watch files and take action when they change
 brew "watchman"
 # Internet file retriever
@@ -172,13 +170,14 @@ brew "yarn"
 brew "yazi"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
+# General-purpose lossless data-compression library
+brew "zlib"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Next-generation plugin manager for zsh
 brew "zplug"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-
 # Command-line interface for 1Password
 cask "1password-cli"
 cask "font-dejavu-sans-mono-nerd-font"
@@ -192,7 +191,6 @@ cask "monitorcontrol"
 cask "zulu@11"
 # OpenJDK distribution from Azul
 cask "zulu@17"
-
 npm "@mermaid-js/mermaid-cli"
 npm "corepack"
 npm "eas-cli"
