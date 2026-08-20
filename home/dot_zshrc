@@ -101,7 +101,7 @@ function y() {
 # PLANNING CENTER CONFIG
 if [[ -d $HOME/pco-box ]]; then
   source $HOME/pco-box/env.sh
-  source ~/pco-box/bin/complete.bash
+  source ~/pco-box/bin/complete.zsh
 fi
 
 if [[ -d $HOME/Code/pco ]]; then
