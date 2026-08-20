@@ -23,6 +23,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
 alias be="bundle exec"
+alias bvb="bin/verify --branch"
 alias c="claude"
 alias clobber="bundle exec rake assets:clobber"
 alias dot="cd ~/.dotfiles"
