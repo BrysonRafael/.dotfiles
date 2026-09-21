@@ -131,3 +131,8 @@ auto_switch = false
 panel_bg = "#292c3c"
 text = "#c6d0f5"
 accent = "#8caaee"
+
+# active_row_bg is left at the theme default: it paints the focused agent row
+# as well as the active workspace, so both stay dark. Only the picker's j/k
+# cursor row is lightened.
+selection_bg = "#51576d"
