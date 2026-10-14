@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Claude Code status line: 🌿 branch | 🤖 model | 💸 month-to-date spend
+# Claude Code status line: 🌿 branch | 🤖 model | 🧠 context used | 💸 month-to-date spend
 #
 # MTD comes from `ccusage` (github.com/ryoppippi/ccusage), a maintained tool
 # that reads the same local transcripts Claude Code already writes to
@@ -15,11 +15,12 @@ LOCK_STALE=120 # reclaim a lock left behind by a killed refresh
 
 input=$(cat)
 
-IFS=$'\t' read -r cwd model <<<"$(
+IFS=$'\t' read -r cwd model ctx_pct <<<"$(
   printf '%s' "$input" |
     jq -r '[
       (.workspace.current_dir // .cwd // "."),
-      (.model.display_name // .model.id // "unknown")
+      (.model.display_name // .model.id // "unknown"),
+      (.context_window.used_percentage // "")
     ] | @tsv'
 )"
 
@@ -71,6 +72,8 @@ mtd_cost=""
 # (v2.1.153+); treat anything else (unset, 0, non-numeric) as "unknown" and
 # render the full line, since that's the pre-2.1.153 behavior this replaces.
 dim=$'\033[2m'
+yellow=$'\033[33m'
+red=$'\033[31m'
 reset=$'\033[0m'
 sep="${dim} | ${reset}"
 cols=${COLUMNS:-0}
@@ -79,7 +82,8 @@ cols=${COLUMNS:-0}
 # Emoji + separators render wider than their byte/char count, so this undercounts
 # a bit — deliberately, since undercounting only risks a segment we could have
 # kept, while overcounting risks the mid-string truncation this exists to avoid.
-visible_len() { local s=${1//$dim/}; s=${s//$reset/}; echo "${#s}"; }
+shopt -s extglob
+visible_len() { local s=${1//$'\033'\[*([0-9;])m/}; echo "${#s}"; }
 
 render() {
   local out=""
@@ -93,12 +97,22 @@ render() {
 branch_seg=""
 [[ -n $branch ]] && branch_seg="🌿 ${branch}"
 model_seg="🤖 ${model}"
+# Context used by the current agent, as a share of its window. Null before the
+# first API call and right after /compact, so the segment is simply omitted then.
+ctx_seg=""
+if [[ $ctx_pct =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+  ctx_pct=${ctx_pct%.*}
+  ctx_color=""
+  ((ctx_pct >= 90)) && ctx_color=$red || { ((ctx_pct >= 70)) && ctx_color=$yellow; }
+  ctx_seg="🧠 ${ctx_color}${ctx_pct}%${ctx_color:+$reset} ctx"
+fi
 cost_seg=""
 [[ -n $mtd_cost ]] && cost_seg="💸 \$${mtd_cost} MTD"
 
 for candidate in \
-  "$branch_seg|$model_seg|$cost_seg" \
-  "$model_seg|$cost_seg" \
+  "$branch_seg|$model_seg|$ctx_seg|$cost_seg" \
+  "$model_seg|$ctx_seg|$cost_seg" \
+  "$model_seg|$ctx_seg" \
   "$branch_seg|$model_seg" \
   "$model_seg"
 do
