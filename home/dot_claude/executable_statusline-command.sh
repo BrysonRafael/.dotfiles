@@ -33,7 +33,13 @@ branch=$(git -C "$cwd" symbolic-ref --quiet --short HEAD 2>/dev/null) ||
 # line that re-renders constantly. Serve the cached figure immediately and
 # refresh it in the background once it goes stale.
 age_of() { # seconds since mtime, or a large number if absent
-  [[ -e $1 ]] && echo $(($(date +%s) - $(stat -f %m "$1"))) || echo 999999
+  local mtime
+  [[ -e $1 ]] || { echo 999999; return; }
+  # devbox/direnv projects put GNU coreutils ahead of macOS's BSD tools on
+  # PATH, and Claude Code hands that PATH to this script. Try BSD stat first,
+  # then GNU; if both fail, report "stale" so a refresh is at least attempted.
+  mtime=$(stat -f %m "$1" 2>/dev/null) || mtime=$(stat -c %Y "$1" 2>/dev/null) || mtime=0
+  echo $(($(date +%s) - mtime))
 }
 
 ccusage_bin=(ccusage)
