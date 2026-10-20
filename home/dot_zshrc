@@ -134,3 +134,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# cloud-agent shell completion
+command -v cloud-agent >/dev/null 2>&1 && eval "$(cloud-agent completion print zsh)"
