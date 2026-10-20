@@ -97,7 +97,8 @@
     "pr@planning-center": true,
     "redshift-mcp@planning-center": true,
     "sentry@planning-center": true,
-    "circleci@planning-center": true
+    "circleci@planning-center": true,
+    "cloud-agent@planning-center": true
   },
   "extraKnownMarketplaces": {
     "chrome-devtools-plugins": {
