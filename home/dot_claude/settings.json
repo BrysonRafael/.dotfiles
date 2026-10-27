@@ -60,9 +60,21 @@
       "Bash(curl *)",
       "Bash(wget *)"
     ],
+    "defaultMode": "auto",
     "disableBypassPermissionsMode": "disable"
   },
   "model": "fable",
+  "skillOverrides": {
+    "docs": "off",
+    "docx": "off",
+    "google-workspace": "off",
+    "import-memory": "off",
+    "morning": "off",
+    "pdf": "off",
+    "pptx": "off",
+    "skill-creator": "off",
+    "xlsx": "off"
+  },
   "hooks": {
     "PreToolUse": [
       {
@@ -77,11 +89,11 @@
     ],
     "SessionStart": [
       {
-        "matcher": "*",
+        "matcher": "^(startup|resume|clear|compact|fork)$",
         "hooks": [
           {
             "type": "command",
-            "command": "bash $HOME/.claude/hooks/herdr-agent-state.sh session",
+            "command": "bash '/Users/brysonrafael/.claude/hooks/herdr-agent-state.sh' session",
             "timeout": 10
           }
         ]
@@ -96,9 +108,11 @@
   "enabledPlugins": {
     "pr@planning-center": true,
     "redshift-mcp@planning-center": true,
-    "sentry@planning-center": true,
+    "sentry@planning-center": false,
     "circleci@planning-center": true,
-    "cloud-agent@planning-center": true
+    "cloud-agent@planning-center": true,
+    "expo@claude-plugins-official": true,
+    "claude-md-toolkit@planning-center": true
   },
   "extraKnownMarketplaces": {
     "chrome-devtools-plugins": {
@@ -110,6 +124,12 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
+    }
+  },
   "theme": "auto",
-  "preferredNotifChannel": "ghostty"
+  "preferredNotifChannel": "ghostty",
+  "agentPushNotifEnabled": true
 }
