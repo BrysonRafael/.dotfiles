@@ -1,4 +1,5 @@
 auto-update = check
+font-family = JetBrainsMono Nerd Font Mono
 font-size = 20
 theme = Catppuccin Frappe
 clipboard-read = allow

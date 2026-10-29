@@ -180,8 +180,7 @@ brew "zplug"
 brew "zsh-autosuggestions"
 # Command-line interface for 1Password
 cask "1password-cli"
-cask "font-dejavu-sans-mono-nerd-font"
-cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-symbols-only-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
