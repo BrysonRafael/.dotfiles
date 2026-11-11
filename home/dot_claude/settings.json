@@ -112,7 +112,8 @@
     "circleci@planning-center": true,
     "cloud-agent@planning-center": true,
     "expo@claude-plugins-official": true,
-    "claude-md-toolkit@planning-center": true
+    "claude-md-toolkit@planning-center": true,
+    "repro@planning-center": true
   },
   "extraKnownMarketplaces": {
     "chrome-devtools-plugins": {
@@ -131,6 +132,7 @@
   },
   "theme": "auto",
   "preferredNotifChannel": "ghostty",
+  "switchModelsOnFlag": false,
   "agentPushNotifEnabled": true,
   "autoMode": {
     "environment": [
