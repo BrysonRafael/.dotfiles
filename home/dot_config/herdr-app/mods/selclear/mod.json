@@ -1,0 +1,1 @@
+{ "place": "none", "title": "Clear selection after copy", "overlay": { "kind": "window", "key": "selclear", "keep": true, "frame": "none", "at": { "x": 0, "y": 0 } } }
