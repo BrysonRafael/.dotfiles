@@ -20,7 +20,7 @@ something chezmoi applies to `$HOME`.
 | `home/dot_config/yazi` | Yazi file manager (theme, keymap, plugin pins) |
 | `home/dot_config/lazygit` | lazygit config |
 | `home/dot_config/herdr` | [herdr](https://herdr.dev/docs/) — tmux-replacement session/pane manager |
-| `home/dot_config/herdr-app` | Herdr desktop app — keys, settings, theme, and two mods: `vimnav` (vim-aware `ctrl+h/j/k/l` + `alt+arrow` resize) and `selclear` (clear a selection after it's copied). On a new machine run `herdr-app do mod.open:vimnav` and `herdr-app do mod.open:selclear` once to load them |
+| `home/dot_config/herdr-app` | Herdr desktop app — keys, settings, theme, and three mods: `vimnav` (vim-aware `ctrl+h/j/k/l` + `alt+arrow` resize), `selclear` (clear a selection after it's copied) and `spacenav` (leader+space, then `j`/`k` to cycle spaces). On a new machine run `herdr-app do mod.open:vimnav` and `herdr-app do mod.open:selclear` once to load them |
 | `home/dot_config/starship.toml` | Starship prompt |
 | `home/dot_claude` | Claude Code global config, hooks, `CLAUDE.md` |
 

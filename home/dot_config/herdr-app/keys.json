@@ -70,7 +70,7 @@
     "ctrl-space b": "layout.toggle:sidebar",
     "ctrl-space j": "agent.next",
     "ctrl-space k": "agent.prev",
-    "ctrl-space space": "mod.open:picker"
+    "ctrl-space space": "mod.open:spacenav"
   },
   "terminal": {
     "ctrl-h": "vimnav.left",
