@@ -65,6 +65,7 @@
     "ctrl-space p": "tab.prev",
     "ctrl-space n": "tab.next",
     "ctrl-space shift-n": "space.new",
+    "ctrl-space z": "pane.zoom",
     "ctrl-alt-p": "tab.prev",
     "ctrl-alt-n": "tab.next",
     "ctrl-space b": "layout.toggle:sidebar",
